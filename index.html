@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fidus Forex Practice Hub – Learn by Doing: Master Trading with Confidence (EU 2026)</title>
-  <meta name="description" content="Fidus Forex Practice Hub – The official EU forex trading practice center. Master candlestick analysis, interactive quizzes, and real trade scenarios. Safe, educational, beginner-friendly." />
+  <title>Fidus Forex Practice Hub â Learn by Doing: Master Trading with Confidence (EU 2026)</title>
+  <meta name="description" content="Fidus Forex Practice Hub â The official EU forex trading practice center. Master candlestick analysis, interactive quizzes, and real trade scenarios. Safe, educational, beginner-friendly." />
   <meta name="keywords" content="forex trading practice, candlestick patterns, trading quiz, EU trading tutorial, beginner forex, Fidus trading" />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Fidus Forex Practice Hub – Master Trading with Confidence" />
+  <meta property="og:title" content="Fidus Forex Practice Hub â Master Trading with Confidence" />
   <meta property="og:description" content="Interactive trading education: candle patterns, quizzes, simulator, and daily routines." />
   <meta property="og:type" content="website" />
       <meta property="og:url" content="https://altnt93.github.io/fidus-forex-tutorial/" />
@@ -41,16 +41,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
-    /* ── Base ── */
+    /* ââ Base ââ */
     body { font-size: 18px; line-height: 1.75; }
     .dark body { background: #0F172A; color: #E2E8F0; }
 
-    /* ── Candle SVG visuals ── */
+    /* ââ Candle SVG visuals ââ */
     .candle-wrap { display:flex; flex-direction:column; align-items:center; gap:2px; }
     .candle-body { border-radius:3px; }
     .candle-wick  { width:2px; border-radius:2px; }
 
-    /* ── Quiz ── */
+    /* ââ Quiz ââ */
     .quiz-option { transition: all .2s; cursor:pointer; }
     .quiz-option:hover { transform: translateX(4px); }
     .quiz-option.correct { background:#d1fae5 !important; border-color:#10b981 !important; color:#065f46; }
@@ -58,10 +58,10 @@
     .dark .quiz-option.correct { background:#064e3b !important; color:#6ee7b7; }
     .dark .quiz-option.incorrect { background:#7f1d1d !important; color:#fca5a5; }
 
-    /* ── Simulator ── */
+    /* ââ Simulator ââ */
     #sim-canvas { image-rendering: pixelated; }
 
-    /* ── Confetti ── */
+    /* ââ Confetti ââ */
     .confetti-piece {
       position: fixed; top:-10px; width:10px; height:16px; border-radius:2px;
       animation: confetti-fall 3s ease-in forwards;
@@ -72,26 +72,26 @@
       100% { transform: translateY(110vh) rotate(720deg); opacity:0; }
     }
 
-    /* ── Progress bar ── */
+    /* ââ Progress bar ââ */
     .stage-dot { transition: all .3s; }
     .stage-dot.active { box-shadow: 0 0 0 4px rgba(20,184,166,.35); }
 
-    /* ── Card hover ── */
+    /* ââ Card hover ââ */
     .hover-lift { transition: transform .25s, box-shadow .25s; }
     .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,.12); }
 
-    /* ── Reveal button ── */
+    /* ââ Reveal button ââ */
     .reveal-btn { transition: all .2s; }
     .reveal-btn:hover { transform: scale(1.03); }
 
-    /* ── Smooth appear ── */
+    /* ââ Smooth appear ââ */
     .fade-in { opacity:0; transform:translateY(20px); transition: opacity .5s, transform .5s; }
     .fade-in.visible { opacity:1; transform:none; }
 
-    /* ── Flash card flip ── */
+    /* ââ Flash card flip ââ */
     .backface-hidden { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
 
-    /* ── Scrollbar ── */
+    /* ââ Scrollbar ââ */
     ::-webkit-scrollbar { width:8px; }
     ::-webkit-scrollbar-track { background:#f1f5f9; }
     ::-webkit-scrollbar-thumb { background:#94a3b8; border-radius:4px; }
@@ -102,9 +102,9 @@
 
 <body class="bg-cream text-navy transition-colors duration-300 font-sans">
 
-<!-- ═══════════════════════════════════════════════════════════
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
      TOP NAV BAR
-════════════════════════════════════════════════════════════ -->
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <nav class="sticky top-0 z-50 bg-white/90 dark:bg-navy-light/90 backdrop-blur border-b border-slate-200 dark:border-slate-700 shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
     <div class="flex items-center gap-3">
@@ -120,35 +120,35 @@
       <a href="#flash-cards" class="hidden sm:inline-block text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-teal px-3 py-1.5 rounded-lg hover:bg-teal/10 transition">Flash Cards</a>
       <a href="#quizzes" class="hidden sm:inline-block text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-teal px-3 py-1.5 rounded-lg hover:bg-teal/10 transition">Quizzes</a>
       <a href="#simulator" class="hidden sm:inline-block text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-teal px-3 py-1.5 rounded-lg hover:bg-teal/10 transition">Simulator</a>
-      <!-- <a href="#brokers" class="hidden sm:inline-block text-sm font-bold text-white bg-teal hover:bg-teal-dark px-4 py-1.5 rounded-lg transition">🏦 Start Trading</a> -->
+      <!-- <a href="#brokers" class="hidden sm:inline-block text-sm font-bold text-white bg-teal hover:bg-teal-dark px-4 py-1.5 rounded-lg transition">ð¦ Start Trading</a> -->
       <!-- Dark/Light Toggle -->
       <button id="themeToggle" aria-label="Toggle dark mode"
         class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-600 bg-white dark:bg-navy flex items-center justify-center hover:bg-slate-100 dark:hover:bg-navy-lighter transition">
-        <span id="themeIcon" class="text-lg">🌙</span>
+        <span id="themeIcon" class="text-lg">ð</span>
       </button>
     </div>
   </div>
 </nav>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SECTION 1 – HERO
-════════════════════════════════════════════════════════════ -->
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+     SECTION 1 â HERO
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <section class="relative overflow-hidden bg-gradient-to-br from-navy via-navy-light to-teal-dark pt-20 pb-28">
   <!-- Background grid -->
   <div class="absolute inset-0 opacity-5" style="background-image:linear-gradient(rgba(255,255,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px);background-size:40px 40px;"></div>
 
   <div class="relative max-w-5xl mx-auto px-6 text-center">
     <div class="inline-block bg-teal/20 border border-teal/40 text-teal-light text-sm font-semibold px-4 py-2 rounded-full mb-6 tracking-wide uppercase">
-      EU Trading Education 2026 · Fidus Official
+      EU Trading Education 2026 Â· Fidus Official
     </div>
 
     <h1 class="text-4xl sm:text-5xl font-black text-white leading-tight mb-6">
-      Forex Practice Hub – Learn by Doing:<br/>
+      Forex Practice Hub â Learn by Doing:<br/>
       <span class="text-teal-light">Master Trading with Confidence</span>
     </h1>
 
     <p class="text-slate-300 text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
-      The hands-on companion to the Fidus Tutorial. Practice candle analysis, test your knowledge with interactive quizzes, and simulate real trade decisions — all in a <strong class="text-white">safe, educational environment</strong>.
+      The hands-on companion to the Fidus Tutorial. Practice candle analysis, test your knowledge with interactive quizzes, and simulate real trade decisions â all in a <strong class="text-white">safe, educational environment</strong>.
     </p>
 
     <!-- Stats bar -->
@@ -175,23 +175,23 @@
     <div class="flex flex-wrap justify-center gap-4">
       <a href="#candle-analysis"
         class="bg-teal hover:bg-teal-dark text-white font-bold px-8 py-4 rounded-2xl text-lg transition hover:shadow-lg hover:shadow-teal/30 hover:-translate-y-0.5">
-        📊 Start Candle Practice
+        ð Start Candle Practice
       </a>
       <a href="#quizzes"
         class="bg-amber hover:bg-amber-dark text-navy font-bold px-8 py-4 rounded-2xl text-lg transition hover:shadow-lg hover:shadow-amber/30 hover:-translate-y-0.5">
-        🧠 Take Quizzes
+        ð§  Take Quizzes
       </a>
       <a href="#"
         class="bg-white/15 hover:bg-white/25 text-white font-bold px-8 py-4 rounded-2xl text-lg border border-white/30 transition hover:-translate-y-0.5">
-        ← Back to Main Tutorial
+        â Back to Main Tutorial
       </a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SECTION 2 – LEARNING PATH PROGRESS
-════════════════════════════════════════════════════════════ -->
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+     SECTION 2 â LEARNING PATH PROGRESS
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <section class="bg-white dark:bg-navy-light border-b border-slate-200 dark:border-slate-700 py-10">
   <div class="max-w-5xl mx-auto px-6">
     <h2 class="text-center text-2xl font-bold text-navy dark:text-white mb-8">Your Learning Path</h2>
@@ -213,18 +213,18 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SECTION 3 – MASTER CANDLE ANALYSIS
-════════════════════════════════════════════════════════════ -->
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+     SECTION 3 â MASTER CANDLE ANALYSIS
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <section id="candle-analysis" class="py-20 bg-cream dark:bg-navy">
   <div class="max-w-6xl mx-auto px-6">
 
     <!-- Section header -->
     <div class="text-center mb-14 fade-in">
-      <div class="inline-block bg-teal/10 dark:bg-teal/20 text-teal-dark dark:text-teal-light text-sm font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">Stage 1 · Candle Mastery</div>
+      <div class="inline-block bg-teal/10 dark:bg-teal/20 text-teal-dark dark:text-teal-light text-sm font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">Stage 1 Â· Candle Mastery</div>
       <h2 class="text-3xl sm:text-4xl font-black text-navy dark:text-white mb-4">Master Candle Analysis</h2>
       <p class="text-slate-600 dark:text-slate-300 text-xl max-w-3xl mx-auto">
-        Every professional trader reads price action through candlesticks. Learn what the market is saying — one candle at a time.
+        Every professional trader reads price action through candlesticks. Learn what the market is saying â one candle at a time.
       </p>
     </div>
 
@@ -251,16 +251,16 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SECTION 4 – INTERACTIVE CHART EXAMPLES
-════════════════════════════════════════════════════════════ -->
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+     SECTION 4 â INTERACTIVE CHART EXAMPLES
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <section id="chart-examples" class="py-20 bg-white dark:bg-navy-light">
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-14 fade-in">
-      <div class="inline-block bg-amber/10 text-amber-dark text-sm font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">Stage 2 · Real Scenarios</div>
+      <div class="inline-block bg-amber/10 text-amber-dark text-sm font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">Stage 2 Â· Real Scenarios</div>
       <h2 class="text-3xl sm:text-4xl font-black text-navy dark:text-white mb-4">Interactive Chart Examples</h2>
       <p class="text-slate-600 dark:text-slate-300 text-xl max-w-3xl mx-auto">
-        Study 6 real trade setups. Click <strong>"Show What Happened"</strong> to reveal the outcome — just like reviewing trades in a journal.
+        Study 6 real trade setups. Click <strong>"Show What Happened"</strong> to reveal the outcome â just like reviewing trades in a journal.
       </p>
     </div>
 
@@ -270,13 +270,13 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SECTION 4b – FLASH CARDS
-════════════════════════════════════════════════════════════ -->
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+     SECTION 4b â FLASH CARDS
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <section id="flash-cards" class="py-20 bg-cream dark:bg-navy">
   <div class="max-w-2xl mx-auto px-6">
     <div class="text-center mb-10 fade-in">
-      <div class="inline-block bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-sm font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">Bonus · Flash Drill</div>
+      <div class="inline-block bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-sm font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">Bonus Â· Flash Drill</div>
       <h2 class="text-3xl sm:text-4xl font-black text-navy dark:text-white mb-3">Candle Flash Cards</h2>
       <p class="text-slate-600 dark:text-slate-300 text-lg max-w-xl mx-auto">Drill every pattern until it's automatic. Tap the card to flip. Mark <strong class="text-emerald-600 dark:text-emerald-400">Got It</strong> or <strong class="text-amber-600 dark:text-amber-400">Practice More</strong>.</p>
     </div>
@@ -299,11 +299,11 @@
         <div><span class="text-navy dark:text-white" id="fcIndex">1</span><span class="text-slate-400">/</span><span id="fcTotal">19</span></div>
       </div>
       <div class="bg-emerald-50 dark:bg-emerald-900/20 rounded-xl px-3 py-2.5 border border-emerald-200 dark:border-emerald-700">
-        <div class="text-emerald-500 text-xs mb-0.5">✓ Got It</div>
+        <div class="text-emerald-500 text-xs mb-0.5">â Got It</div>
         <div class="text-emerald-700 dark:text-emerald-300" id="fcKnown">0</div>
       </div>
       <div class="bg-amber-50 dark:bg-amber-900/20 rounded-xl px-3 py-2.5 border border-amber-200 dark:border-amber-700">
-        <div class="text-amber-500 text-xs mb-0.5">↺ Review</div>
+        <div class="text-amber-500 text-xs mb-0.5">âº Review</div>
         <div class="text-amber-700 dark:text-amber-300" id="fcPractice">0</div>
       </div>
     </div>
@@ -313,7 +313,7 @@
       <div id="flashCard" onclick="flipCard()" class="cursor-pointer select-none rounded-3xl shadow-xl"
            style="transform-style:preserve-3d; transition:transform 0.55s cubic-bezier(.4,0,.2,1); min-height:400px; position:relative;">
 
-        <!-- FRONT: show candle chart ONLY — no name hint -->
+        <!-- FRONT: show candle chart ONLY â no name hint -->
         <div class="absolute inset-0 rounded-3xl bg-white dark:bg-navy-light border-2 border-slate-200 dark:border-slate-600 flex flex-col items-center justify-between p-6"
              style="backface-visibility:hidden; -webkit-backface-visibility:hidden;">
           <span id="fcCategoryBadge" class="self-start text-xs font-bold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500"></span>
@@ -341,19 +341,19 @@
           </div>
           <div class="space-y-2.5 text-sm">
             <div class="bg-white/5 rounded-xl p-3">
-              <p class="text-teal text-xs font-bold uppercase tracking-wide mb-1">📖 What It Means</p>
+              <p class="text-teal text-xs font-bold uppercase tracking-wide mb-1">ð What It Means</p>
               <p class="text-slate-300 leading-relaxed" id="fcMeaning"></p>
             </div>
             <div class="bg-white/5 rounded-xl p-3">
-              <p class="text-amber text-xs font-bold uppercase tracking-wide mb-1">🧠 Psychology</p>
+              <p class="text-amber text-xs font-bold uppercase tracking-wide mb-1">ð§  Psychology</p>
               <p class="text-slate-300 leading-relaxed" id="fcPsychology"></p>
             </div>
             <div class="bg-white/5 rounded-xl p-3">
-              <p class="text-purple-400 text-xs font-bold uppercase tracking-wide mb-1">📐 Best Conditions</p>
+              <p class="text-purple-400 text-xs font-bold uppercase tracking-wide mb-1">ð Best Conditions</p>
               <p class="text-slate-300 leading-relaxed" id="fcConditions"></p>
             </div>
             <div class="bg-teal/10 border border-teal/20 rounded-xl p-3">
-              <p class="text-teal-light text-xs font-bold uppercase tracking-wide mb-1">🕐 EU Session Tip</p>
+              <p class="text-teal-light text-xs font-bold uppercase tracking-wide mb-1">ð EU Session Tip</p>
               <p class="text-slate-400 text-xs leading-relaxed" id="fcSession"></p>
             </div>
           </div>
@@ -365,30 +365,30 @@
     <div class="grid grid-cols-2 gap-3 mb-3">
       <button onclick="markCard(false)"
         class="py-4 rounded-2xl font-bold text-base bg-amber-50 dark:bg-amber-900/20 border-2 border-amber-300 dark:border-amber-600 text-amber-700 dark:text-amber-300 hover:bg-amber-100 transition">
-        ↺ Practice More
+        âº Practice More
       </button>
       <button onclick="markCard(true)"
         class="py-4 rounded-2xl font-bold text-base bg-emerald-50 dark:bg-emerald-900/20 border-2 border-emerald-400 dark:border-emerald-600 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-100 transition">
-        ✓ Got It!
+        â Got It!
       </button>
     </div>
     <!-- Navigation row -->
     <div class="flex gap-2">
-      <button onclick="prevCard()" class="flex-1 py-3 rounded-xl font-semibold text-sm bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition">← Prev</button>
-      <button onclick="shuffleCards()" class="px-4 py-3 rounded-xl font-semibold text-sm bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition">🔀</button>
-      <button onclick="nextCard()" class="flex-1 py-3 rounded-xl font-semibold text-sm bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition">Next →</button>
+      <button onclick="prevCard()" class="flex-1 py-3 rounded-xl font-semibold text-sm bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition">â Prev</button>
+      <button onclick="shuffleCards()" class="px-4 py-3 rounded-xl font-semibold text-sm bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition">ð</button>
+      <button onclick="nextCard()" class="flex-1 py-3 rounded-xl font-semibold text-sm bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition">Next â</button>
     </div>
-    <p class="text-center text-slate-400 dark:text-slate-500 text-xs mt-4">Work through all 19 cards — aim to mark every one "Got It" ✓</p>
+    <p class="text-center text-slate-400 dark:text-slate-500 text-xs mt-4">Work through all 19 cards â aim to mark every one "Got It" â</p>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SECTION 4c – PATTERN RECOGNITION GAME
-════════════════════════════════════════════════════════════ -->
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+     SECTION 4c â PATTERN RECOGNITION GAME
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <section id="pattern-game" class="py-20 bg-white dark:bg-navy-light">
   <div class="max-w-3xl mx-auto px-6">
     <div class="text-center mb-14 fade-in">
-      <div class="inline-block bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 text-sm font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">Bonus · Speed Drill</div>
+      <div class="inline-block bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 text-sm font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">Bonus Â· Speed Drill</div>
       <h2 class="text-3xl sm:text-4xl font-black text-navy dark:text-white mb-4">Pattern Recognition Game</h2>
       <p class="text-slate-600 dark:text-slate-300 text-xl max-w-2xl mx-auto">See a candle. Name it. Build the reflexes professional traders rely on.</p>
     </div>
@@ -404,7 +404,7 @@
         <div class="text-xs text-slate-400">Progress</div>
       </div>
       <div class="bg-slate-50 dark:bg-navy rounded-xl px-5 py-3 border border-slate-200 dark:border-slate-700 text-center">
-        <div class="text-2xl font-black text-amber" id="pgStreak">0🔥</div>
+        <div class="text-2xl font-black text-amber" id="pgStreak">0ð¥</div>
         <div class="text-xs text-slate-400">Streak</div>
       </div>
     </div>
@@ -415,15 +415,15 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SECTION 5 – QUIZZES
-════════════════════════════════════════════════════════════ -->
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+     SECTION 5 â QUIZZES
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <section id="quizzes" class="py-20 bg-gradient-to-br from-navy via-navy-light to-slate-800">
   <div class="max-w-4xl mx-auto px-6">
     <div class="text-center mb-14 fade-in">
-      <div class="inline-block bg-teal/20 text-teal-light text-sm font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">Stage 3 · Test Yourself</div>
+      <div class="inline-block bg-teal/20 text-teal-light text-sm font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">Stage 3 Â· Test Yourself</div>
       <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">Practice Quizzes</h2>
-      <p class="text-slate-300 text-xl max-w-2xl mx-auto">Three quizzes covering pattern recognition, real decisions, and risk management. Track your score and beat your streak! 🎯</p>
+      <p class="text-slate-300 text-xl max-w-2xl mx-auto">Three quizzes covering pattern recognition, real decisions, and risk management. Track your score and beat your streak! ð¯</p>
 
       <!-- Score tracker -->
       <div class="flex flex-wrap justify-center gap-4 mt-8">
@@ -432,7 +432,7 @@
           <div class="text-slate-300 text-sm">Total Score</div>
         </div>
         <div class="bg-white/10 rounded-2xl px-6 py-3 text-center">
-          <div class="text-2xl font-black text-teal-light" id="streakCount">0 🔥</div>
+          <div class="text-2xl font-black text-teal-light" id="streakCount">0 ð¥</div>
           <div class="text-slate-300 text-sm">Answer Streak</div>
         </div>
         <div class="bg-white/10 rounded-2xl px-6 py-3 text-center">
@@ -465,16 +465,16 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SECTION 6 – MINI TRADING SIMULATOR
-════════════════════════════════════════════════════════════ -->
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+     SECTION 6 â MINI TRADING SIMULATOR
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <section id="simulator" class="py-20 bg-cream dark:bg-navy">
   <div class="max-w-5xl mx-auto px-6">
     <div class="text-center mb-14 fade-in">
-      <div class="inline-block bg-teal/10 dark:bg-teal/20 text-teal-dark dark:text-teal-light text-sm font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">Stage 4 · Simulate Trades</div>
+      <div class="inline-block bg-teal/10 dark:bg-teal/20 text-teal-dark dark:text-teal-light text-sm font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">Stage 4 Â· Simulate Trades</div>
       <h2 class="text-3xl sm:text-4xl font-black text-navy dark:text-white mb-4">Mini Trading Simulator</h2>
       <p class="text-slate-600 dark:text-slate-300 text-xl max-w-3xl mx-auto">
-        No real money. No risk. Analyze the candle formation, choose your direction, set your levels — then see how the trade plays out.
+        No real money. No risk. Analyze the candle formation, choose your direction, set your levels â then see how the trade plays out.
       </p>
     </div>
 
@@ -483,18 +483,18 @@
       <div class="bg-slate-900 p-6">
         <div class="flex items-center justify-between mb-4">
           <div>
-            <span class="text-slate-400 text-sm">EUR/USD · H1 Chart</span>
+            <span class="text-slate-400 text-sm">EUR/USD Â· H1 Chart</span>
             <div class="text-white font-bold text-xl" id="simPair">EUR/USD</div>
           </div>
           <div class="flex gap-2">
-            <button onclick="newSimTrade()" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white text-sm rounded-lg font-semibold transition">🔄 New Setup</button>
+            <button onclick="newSimTrade()" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white text-sm rounded-lg font-semibold transition">ð New Setup</button>
           </div>
         </div>
         <!-- Canvas chart -->
         <canvas id="sim-canvas" width="700" height="220" class="w-full rounded-xl" style="max-height:220px;"></canvas>
         <!-- Pattern label -->
         <div class="mt-3 text-center">
-          <span class="bg-amber/20 text-amber text-sm font-bold px-4 py-1.5 rounded-full" id="simPatternLabel">Loading pattern…</span>
+          <span class="bg-amber/20 text-amber text-sm font-bold px-4 py-1.5 rounded-full" id="simPatternLabel">Loading patternâ¦</span>
         </div>
       </div>
 
@@ -503,15 +503,15 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
           <!-- Direction -->
           <div>
-            <label class="block text-sm font-bold text-slate-600 dark:text-slate-300 mb-3">📈 Trade Direction</label>
+            <label class="block text-sm font-bold text-slate-600 dark:text-slate-300 mb-3">ð Trade Direction</label>
             <div class="flex gap-3">
               <button id="longBtn" onclick="selectDir('long')"
                 class="flex-1 py-3 rounded-xl font-bold border-2 border-emerald-400 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition text-base">
-                ▲ Long (Buy)
+                â² Long (Buy)
               </button>
               <button id="shortBtn" onclick="selectDir('short')"
                 class="flex-1 py-3 rounded-xl font-bold border-2 border-red-400 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition text-base">
-                ▼ Short (Sell)
+                â¼ Short (Sell)
               </button>
             </div>
           </div>
@@ -519,12 +519,12 @@
           <!-- Risk params -->
           <div class="space-y-3">
             <div class="flex items-center gap-3">
-              <label class="text-sm font-bold text-slate-600 dark:text-slate-300 w-32">🛡️ Stop Loss (pips)</label>
+              <label class="text-sm font-bold text-slate-600 dark:text-slate-300 w-32">ð¡ï¸ Stop Loss (pips)</label>
               <input type="number" id="simSL" value="20" min="5" max="100"
                 class="flex-1 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-navy rounded-xl px-4 py-2 text-base font-semibold text-navy dark:text-white focus:border-teal outline-none" />
             </div>
             <div class="flex items-center gap-3">
-              <label class="text-sm font-bold text-slate-600 dark:text-slate-300 w-32">🎯 Take Profit (pips)</label>
+              <label class="text-sm font-bold text-slate-600 dark:text-slate-300 w-32">ð¯ Take Profit (pips)</label>
               <input type="number" id="simTP" value="40" min="5" max="200"
                 class="flex-1 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-navy rounded-xl px-4 py-2 text-base font-semibold text-navy dark:text-white focus:border-teal outline-none" />
             </div>
@@ -534,13 +534,13 @@
         <!-- RRR display -->
         <div class="bg-slate-50 dark:bg-navy rounded-xl p-4 mb-6 flex flex-wrap gap-4 text-sm">
           <div><span class="text-slate-500">Risk/Reward Ratio: </span><span class="font-black text-navy dark:text-white" id="rrrDisplay">1:2.0</span></div>
-          <div><span class="text-slate-500">Pattern Signal: </span><span class="font-bold text-teal" id="simSignal">—</span></div>
+          <div><span class="text-slate-500">Pattern Signal: </span><span class="font-bold text-teal" id="simSignal">â</span></div>
           <div><span class="text-slate-500">Market Session: </span><span class="font-bold text-amber" id="simSession">London Open</span></div>
         </div>
 
         <button onclick="runSimulation()"
           class="w-full bg-teal hover:bg-teal-dark text-white font-black text-xl py-5 rounded-2xl transition hover:shadow-lg hover:shadow-teal/30 hover:-translate-y-0.5">
-          ▶ Execute Trade &amp; See Outcome
+          â¶ Execute Trade &amp; See Outcome
         </button>
 
         <!-- Result panel -->
@@ -550,13 +550,13 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SECTION 7 – DAILY PRACTICE ROUTINE
-════════════════════════════════════════════════════════════ -->
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+     SECTION 7 â DAILY PRACTICE ROUTINE
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <section id="routine" class="py-20 bg-white dark:bg-navy-light">
   <div class="max-w-4xl mx-auto px-6">
     <div class="text-center mb-14 fade-in">
-      <div class="inline-block bg-amber/10 text-amber-dark text-sm font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">Stage 5 · Build a Habit</div>
+      <div class="inline-block bg-amber/10 text-amber-dark text-sm font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">Stage 5 Â· Build a Habit</div>
       <h2 class="text-3xl sm:text-4xl font-black text-navy dark:text-white mb-4">Your 30-Minute Daily Routine</h2>
       <p class="text-slate-600 dark:text-slate-300 text-xl">Consistency beats intensity. Follow this simple daily plan and you will improve faster than 90% of beginners.</p>
     </div>
@@ -566,37 +566,20 @@
     </div>
 
     <div class="mt-10 bg-amber/10 dark:bg-amber/5 border border-amber/30 rounded-2xl p-6 text-center">
-      <p class="text-amber-dark dark:text-amber font-bold text-xl">⏱️ Total: 30 minutes per day</p>
+      <p class="text-amber-dark dark:text-amber font-bold text-xl">â±ï¸ Total: 30 minutes per day</p>
       <p class="text-slate-600 dark:text-slate-400 mt-2">Studies show that 30 focused minutes daily outperforms 3+ hour weekend marathon sessions. Your brain needs repetition, not overload.</p>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SECTION 7b – BROKER DIRECTORY (AFFILIATE)
-════════════════════════════════════════════════════════════ -->
-<section id="brokers" class="py-20 bg-gradient-to-br from-navy via-navy-light to-slate-800" hidden>
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-14 fade-in">
-      <div class="inline-block bg-teal/20 text-teal-light text-sm font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">Stage 6 · Start for Real</div>
-      <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">Choose a Regulated EU Broker</h2>
-      <p class="text-slate-300 text-xl max-w-3xl mx-auto">All brokers below are regulated by EU/EEA authorities. Start with a <strong class="text-teal-light">free demo account</strong> — no deposit required. Only move to real money after consistent demo profits.</p>
-      <div class="mt-6 inline-flex items-center gap-2 bg-amber/10 border border-amber/30 rounded-xl px-5 py-3 text-amber text-sm font-semibold">
-        ⚠️ Always verify regulation independently at your country's financial authority before depositing
-      </div>
-    </div>
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+     SECTION 7b â BROKER DIRECTORY (AFFILIATE)
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6" id="brokerGrid">
-      <!-- Filled by JS -->
-    </div>
 
-    <p class="text-center text-slate-500 text-xs mt-10">* Links may contain affiliate codes that support this free educational platform at no cost to you. Always read broker T&Cs before registering.</p>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     SECTION 8 – NEXT STEPS & MOTIVATION
-════════════════════════════════════════════════════════════ -->
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+     SECTION 8 â NEXT STEPS & MOTIVATION
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <section id="next-steps" class="py-20 bg-gradient-to-br from-teal-dark to-navy">
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-14 fade-in">
@@ -613,14 +596,14 @@
       <blockquote class="text-2xl font-semibold text-white/90 italic max-w-3xl mx-auto leading-relaxed">
         "The goal of a trader is not to make perfect trades. The goal is to follow your rules so consistently that the edge plays out over time."
       </blockquote>
-      <cite class="block mt-4 text-teal-light font-bold text-lg">— A principle every BlackRock portfolio manager lives by</cite>
+      <cite class="block mt-4 text-teal-light font-bold text-lg">â A principle every BlackRock portfolio manager lives by</cite>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SECTION 9 – FOOTER
-════════════════════════════════════════════════════════════ -->
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+     SECTION 9 â FOOTER
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <footer class="bg-navy text-slate-400 py-16">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
@@ -643,36 +626,27 @@
           <li><a href="#routine" class="hover:text-teal transition">Daily Routine</a></li>
         </ul>
       </div>
-      <div>
-        <h4 class="text-white font-bold mb-4">Regulated Brokers (EU)</h4>
-        <ul class="space-y-2 text-sm">
-          <li>✅ eToro – CySEC regulated</li>
-          <li>✅ Pepperstone – FCA &amp; CySEC</li>
-          <li>✅ XTB – KNF &amp; FCA regulated</li>
-          <li>✅ IG Markets – FCA regulated</li>
-          <li>✅ Saxo Bank – Danish FSA</li>
-        </ul>
-      </div>
+      
     </div>
 
     <!-- Risk disclaimer -->
     <div class="border-t border-slate-700 pt-8 space-y-4 text-sm leading-relaxed">
       <div class="bg-red-900/20 border border-red-700/40 rounded-2xl p-6">
-        <p class="text-red-400 font-bold text-base mb-3">⚠️ IMPORTANT RISK DISCLAIMER</p>
+        <p class="text-red-400 font-bold text-base mb-3">â ï¸ IMPORTANT RISK DISCLAIMER</p>
         <p class="mb-2"><strong class="text-red-300">Between 70% and 80% of retail trader accounts lose money when trading CFDs and forex with leverage.</strong> You should consider whether you understand how these products work and whether you can afford to take the high risk of losing your money.</p>
         <p class="mb-2">This website is for <strong class="text-white">educational and informational purposes only</strong>. It does not constitute financial advice, investment advice, or a recommendation to trade any financial instrument. Nothing here should be interpreted as a solicitation or an offer to buy or sell any financial product.</p>
         <p>Fidus Practice Hub is designed to support traders in learning. All simulations use fictional prices. Past performance and simulated results are not indicative of future results.</p>
       </div>
 
       <div class="bg-blue-900/20 border border-blue-700/40 rounded-2xl p-5">
-        <p class="text-blue-400 font-bold mb-2">🇪🇺 EU Regulatory Notice (ESMA)</p>
+        <p class="text-blue-400 font-bold mb-2">ðªðº EU Regulatory Notice (ESMA)</p>
         <p>Under ESMA guidelines, retail clients in the EU are subject to leverage limits: up to 1:30 for major FX pairs, 1:20 for minor FX, gold, and major indices, 1:10 for commodities, and 1:2 for crypto. Negative balance protection is mandatory for retail clients. Always verify your broker is regulated by a recognized EU or EEA authority before depositing funds.</p>
       </div>
 
       <p class="text-center text-slate-500 text-xs mt-6">
-        © 2026 Fidus Forex Practice Hub · EU Trading Education Project · All rights reserved.<br/>
+        Â© 2026 Fidus Forex Practice Hub Â· EU Trading Education Project Â· All rights reserved.<br/>
         Educational content only. Trade responsibly.<br/>
-        <span class="text-amber-500/80">⚠️ Laws and regulations may change at any time — always stay updated with your local financial authority before trading.</span>
+        <span class="text-amber-500/80">â ï¸ Laws and regulations may change at any time â always stay updated with your local financial authority before trading.</span>
       </p>
     </div>
   </div>
@@ -681,13 +655,13 @@
 <!-- Confetti container -->
 <div id="confettiContainer"></div>
 
-<!-- ═══════════════════════════════════════════════════════════
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
      JAVASCRIPT
-════════════════════════════════════════════════════════════ -->
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <script>
-/* ──────────────────────────────────────────
+/* ââââââââââââââââââââââââââââââââââââââââââ
    THEME TOGGLE
-────────────────────────────────────────── */
+ââââââââââââââââââââââââââââââââââââââââââ */
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon   = document.getElementById('themeIcon');
 let isDark = false;
@@ -695,18 +669,18 @@ let isDark = false;
 themeToggle.addEventListener('click', () => {
   isDark = !isDark;
   document.documentElement.classList.toggle('dark', isDark);
-  themeIcon.textContent = isDark ? '☀️' : '🌙';
+  themeIcon.textContent = isDark ? 'âï¸' : 'ð';
 });
 
-/* ──────────────────────────────────────────
+/* ââââââââââââââââââââââââââââââââââââââââââ
    LEARNING PATH STAGES
-────────────────────────────────────────── */
+ââââââââââââââââââââââââââââââââââââââââââ */
 const stages = [
-  { label: 'Candle Basics',   icon: '🕯️',  href: '#candle-analysis' },
-  { label: 'Patterns',        icon: '📊',  href: '#candle-analysis' },
-  { label: 'Real Examples',   icon: '📈',  href: '#chart-examples' },
-  { label: 'Quizzes',         icon: '🧠',  href: '#quizzes' },
-  { label: 'Live Practice',   icon: '🚀',  href: '#simulator' },
+  { label: 'Candle Basics',   icon: 'ð¯ï¸',  href: '#candle-analysis' },
+  { label: 'Patterns',        icon: 'ð',  href: '#candle-analysis' },
+  { label: 'Real Examples',   icon: 'ð',  href: '#chart-examples' },
+  { label: 'Quizzes',         icon: 'ð§ ',  href: '#quizzes' },
+  { label: 'Live Practice',   icon: 'ð',  href: '#simulator' },
 ];
 
 let currentStage = 0;
@@ -732,7 +706,7 @@ function renderStages() {
         ${done   ? 'bg-teal border-teal text-white shadow-md'      :
           active ? 'bg-white dark:bg-navy border-teal text-teal shadow-lg active'  :
                    'bg-white dark:bg-navy-lighter border-slate-300 dark:border-slate-600 text-slate-400'}"
-      >${done ? '✓' : s.icon}</div>
+      >${done ? 'â' : s.icon}</div>
       <span class="text-xs font-bold text-center whitespace-nowrap ${active ? 'text-teal' : 'text-slate-500 dark:text-slate-400'} group-hover:text-teal transition">
         ${s.label}
       </span>`;
@@ -748,7 +722,7 @@ function renderStages() {
     row.innerHTML = `
       <div class="w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold
         ${done ? 'bg-teal text-white' : active ? 'bg-teal/20 text-teal' : 'bg-slate-100 dark:bg-slate-700 text-slate-400'}">
-        ${done ? '✓' : s.icon}
+        ${done ? 'â' : s.icon}
       </div>
       <div>
         <div class="font-bold text-sm ${active ? 'text-teal' : 'text-navy dark:text-white'}">${s.label}</div>
@@ -760,14 +734,14 @@ function renderStages() {
 
 renderStages();
 
-/* ──────────────────────────────────────────
+/* ââââââââââââââââââââââââââââââââââââââââââ
    CANDLE PATTERN DATA
-────────────────────────────────────────── */
+ââââââââââââââââââââââââââââââââââââââââââ */
 const candlePatterns = {
   single: [
     {
       name: 'Hammer',
-      emoji: '🔨',
+      emoji: 'ð¨',
       signal: 'Bullish Reversal',
       signalColor: 'green',
       meaning: 'Price fell sharply but buyers pushed it back up. Shows strong buying pressure at support.',
@@ -778,10 +752,10 @@ const candlePatterns = {
     },
     {
       name: 'Inverted Hammer',
-      emoji: '🔄',
+      emoji: 'ð',
       signal: 'Bullish Reversal',
       signalColor: 'green',
-      meaning: 'Buyers tried to push price up but failed — however, the next candle confirms the reversal.',
+      meaning: 'Buyers tried to push price up but failed â however, the next candle confirms the reversal.',
       psychology: 'Bears close the session near open, but bulls show their presence. Confirmation needed.',
       conditions: 'Found at the bottom of a downtrend. Requires bullish confirmation on the next candle.',
       session: 'Watch for this at the Asian session close (04:00 GMT) before London takes over.',
@@ -789,65 +763,65 @@ const candlePatterns = {
     },
     {
       name: 'Shooting Star',
-      emoji: '💫',
+      emoji: 'ð«',
       signal: 'Bearish Reversal',
       signalColor: 'red',
       meaning: 'Bulls tried to push price higher but sellers rejected the move forcefully.',
       psychology: 'Buyers lose control. The long upper wick shows that higher prices were rejected. Bearish warning.',
       conditions: 'Most reliable after a strong uptrend. Even more powerful at resistance levels.',
-      session: 'Classic setup at the NY session open (13:30 GMT) — often reverses pre-session rallies.',
+      session: 'Classic setup at the NY session open (13:30 GMT) â often reverses pre-session rallies.',
       body: { color: '#ef4444', height: 20, topWick: 55, bottomWick: 3 },
     },
     {
       name: 'Bearish Hanging Man',
-      emoji: '⚠️',
+      emoji: 'â ï¸',
       signal: 'Bearish Reversal',
       signalColor: 'red',
       meaning: 'Looks like a Hammer but appears in an uptrend. Shows that selling pressure is starting.',
       psychology: 'Despite recovering by close, the intraday selloff suggests bulls are losing momentum.',
       conditions: 'Appears in an uptrend. Confirmation by a bearish close on the next candle is essential.',
-      session: 'Often seen near the end of the London session (16:00–17:00 GMT).',
+      session: 'Often seen near the end of the London session (16:00â17:00 GMT).',
       body: { color: '#ef4444', height: 20, topWick: 3, bottomWick: 55 },
     },
     {
       name: 'Doji',
-      emoji: '➕',
+      emoji: 'â',
       signal: 'Indecision / Reversal',
       signalColor: 'yellow',
       meaning: 'Open and close are almost equal. Neither buyers nor sellers won the session.',
-      psychology: 'Perfect balance of fear and greed. The market is at a decision point — a big move is coming.',
+      psychology: 'Perfect balance of fear and greed. The market is at a decision point â a big move is coming.',
       conditions: 'Powerful at the end of a trend. At support/resistance it signals potential reversal.',
-      session: 'Common during low-liquidity Asian session (00:00–07:00 GMT). Higher impact at key levels.',
+      session: 'Common during low-liquidity Asian session (00:00â07:00 GMT). Higher impact at key levels.',
       body: { color: '#64748b', height: 2, topWick: 30, bottomWick: 30 },
     },
     {
       name: 'Spinning Top',
-      emoji: '🌀',
+      emoji: 'ð',
       signal: 'Indecision',
       signalColor: 'yellow',
       meaning: 'Small real body with wicks on both sides. Price moved but closed near open.',
       psychology: 'Both sides tested but neither dominated. Trend may be losing energy.',
       conditions: 'After a strong trend, signals consolidation or potential reversal.',
-      session: 'Frequent between sessions when liquidity is thin (07:00–08:00 GMT).',
+      session: 'Frequent between sessions when liquidity is thin (07:00â08:00 GMT).',
       body: { color: '#8b5cf6', height: 14, topWick: 28, bottomWick: 28 },
     },
     {
       name: 'Bullish Marubozu',
-      emoji: '🟢',
+      emoji: 'ð¢',
       signal: 'Strong Bullish',
       signalColor: 'green',
-      meaning: 'No wicks at all. Price opened at the low and closed at the high — pure buying dominance.',
+      meaning: 'No wicks at all. Price opened at the low and closed at the high â pure buying dominance.',
       psychology: 'Bulls were in complete control from open to close. Very high conviction move.',
       conditions: 'Signals strong momentum. Most reliable in trend direction or at the start of a breakout.',
-      session: 'Often appears at the NY-London overlap (13:00–17:00 GMT) — peak liquidity period.',
+      session: 'Often appears at the NY-London overlap (13:00â17:00 GMT) â peak liquidity period.',
       body: { color: '#10b981', height: 80, topWick: 0, bottomWick: 0 },
     },
     {
       name: 'Bearish Marubozu',
-      emoji: '🔴',
+      emoji: 'ð´',
       signal: 'Strong Bearish',
       signalColor: 'red',
-      meaning: 'No wicks. Price opened at the high and closed at the low — complete seller control.',
+      meaning: 'No wicks. Price opened at the high and closed at the low â complete seller control.',
       psychology: 'Bears dominated every minute of the session. Strong continuation signal downward.',
       conditions: 'Continuation in downtrend or breakdown from support. Avoid fighting this signal.',
       session: 'Common on impactful news releases and during the NY session high-volume hours.',
@@ -857,13 +831,13 @@ const candlePatterns = {
   double: [
     {
       name: 'Bullish Engulfing',
-      emoji: '🫂',
+      emoji: 'ð«',
       signal: 'Strong Bullish Reversal',
       signalColor: 'green',
       meaning: 'A large green candle completely engulfs the previous red candle. Bulls overwhelmed bears.',
       psychology: 'All of yesterday\'s seller progress was erased and more. Buyers flooded the market.',
       conditions: 'After a downtrend. The second candle must fully engulf the body of the first.',
-      session: 'Extremely powerful at London open — overnight sellers trapped as new buyers pile in.',
+      session: 'Extremely powerful at London open â overnight sellers trapped as new buyers pile in.',
       body: null,
       candles: [
         { h:74, o:70, c:50, l:46, bull:false },
@@ -872,13 +846,13 @@ const candlePatterns = {
     },
     {
       name: 'Bearish Engulfing',
-      emoji: '🐻',
+      emoji: 'ð»',
       signal: 'Strong Bearish Reversal',
       signalColor: 'red',
       meaning: 'A large red candle engulfs the prior green candle. Bears took full control.',
       psychology: 'All buying progress reversed in one candle. Sellers committed with size.',
-      conditions: 'At the top of an uptrend. Strong confirmation signal — take it seriously.',
-      session: 'Deadly combination at resistance during NY session (15:00–17:00 GMT).',
+      conditions: 'At the top of an uptrend. Strong confirmation signal â take it seriously.',
+      session: 'Deadly combination at resistance during NY session (15:00â17:00 GMT).',
       body: null,
       candles: [
         { h:74, o:50, c:70, l:46, bull:true  },
@@ -887,7 +861,7 @@ const candlePatterns = {
     },
     {
       name: 'Bullish Harami',
-      emoji: '🤰',
+      emoji: 'ð¤°',
       signal: 'Potential Bullish Reversal',
       signalColor: 'green',
       meaning: 'Small green candle inside a large red candle. Momentum is slowing.',
@@ -902,7 +876,7 @@ const candlePatterns = {
     },
     {
       name: 'Bearish Harami',
-      emoji: '⬇️',
+      emoji: 'â¬ï¸',
       signal: 'Potential Bearish Reversal',
       signalColor: 'red',
       meaning: 'Small red candle inside a large green candle. Upward momentum is failing.',
@@ -917,10 +891,10 @@ const candlePatterns = {
     },
     {
       name: 'Tweezer Bottom',
-      emoji: '🔧',
+      emoji: 'ð§',
       signal: 'Bullish Reversal',
       signalColor: 'green',
-      meaning: 'Two candles with the same low — price tested a level twice and held both times.',
+      meaning: 'Two candles with the same low â price tested a level twice and held both times.',
       psychology: 'Sellers tried to push lower twice and failed. This level is strongly defended by buyers.',
       conditions: 'Works best at significant support levels, Fibonacci retracements, or round numbers.',
       session: 'Powerful at Asian session lows before London opens and reverses the move.',
@@ -932,13 +906,13 @@ const candlePatterns = {
     },
     {
       name: 'Tweezer Top',
-      emoji: '📌',
+      emoji: 'ð',
       signal: 'Bearish Reversal',
       signalColor: 'red',
-      meaning: 'Two candles with the same high — price tested a level twice and was rejected both times.',
+      meaning: 'Two candles with the same high â price tested a level twice and was rejected both times.',
       psychology: 'Buyers attempted a breakout twice and failed. The level is heavily defended by sellers.',
       conditions: 'Most reliable at major resistance, previous highs, or round-number price levels.',
-      session: 'Classic setup at NY session highs — smart money distributes at familiar levels.',
+      session: 'Classic setup at NY session highs â smart money distributes at familiar levels.',
       body: null,
       candles: [
         { h:80, o:46, c:72, l:44, bull:true  },
@@ -949,10 +923,10 @@ const candlePatterns = {
   triple: [
     {
       name: 'Morning Star',
-      emoji: '🌅',
+      emoji: 'ð',
       signal: 'Bullish Reversal',
       signalColor: 'green',
-      meaning: '3-candle pattern: big red → small indecision candle → big green. Trend reversal confirmed.',
+      meaning: '3-candle pattern: big red â small indecision candle â big green. Trend reversal confirmed.',
       psychology: 'Day 1: Bears win. Day 2: Both sides confused. Day 3: Bulls take complete control. Classic shift.',
       conditions: 'At the bottom of a downtrend. The middle candle should gap down (on daily charts).',
       session: 'Weekly chart Morning Stars at key EU economic data releases are highly significant.',
@@ -965,10 +939,10 @@ const candlePatterns = {
     },
     {
       name: 'Evening Star',
-      emoji: '🌆',
+      emoji: 'ð',
       signal: 'Bearish Reversal',
       signalColor: 'red',
-      meaning: '3-candle pattern: big green → small indecision → big red. A top is forming.',
+      meaning: '3-candle pattern: big green â small indecision â big red. A top is forming.',
       psychology: 'Buyers push to a high, uncertainty hits, then sellers take over decisively.',
       conditions: 'At the top of an uptrend. Most reliable on daily/weekly timeframes.',
       session: 'Watch for Evening Stars on weekly EUR/USD charts after major ECB rate decisions.',
@@ -981,11 +955,11 @@ const candlePatterns = {
     },
     {
       name: 'Three White Soldiers',
-      emoji: '⚔️',
+      emoji: 'âï¸',
       signal: 'Strong Bullish Continuation',
       signalColor: 'green',
       meaning: 'Three consecutive large green candles, each closing higher. Very strong buying momentum.',
-      psychology: 'Three sessions of complete bull dominance. No hesitation — trend confirmation.',
+      psychology: 'Three sessions of complete bull dominance. No hesitation â trend confirmation.',
       conditions: 'Confirms a new uptrend. Each candle should open within the prior body and close near its high.',
       session: 'Potent after central bank announcements or strong NFP data on daily charts.',
       body: null,
@@ -997,7 +971,7 @@ const candlePatterns = {
     },
     {
       name: 'Three Black Crows',
-      emoji: '🦅',
+      emoji: 'ð¦',
       signal: 'Strong Bearish Continuation',
       signalColor: 'red',
       meaning: 'Three consecutive large red candles. Bears are in full control across multiple sessions.',
@@ -1013,10 +987,10 @@ const candlePatterns = {
     },
     {
       name: 'Abandoned Baby (Bullish)',
-      emoji: '👶',
+      emoji: 'ð¶',
       signal: 'Strong Bullish Reversal',
       signalColor: 'green',
-      meaning: 'Big red → isolated Doji with gap → big green. One of the rarest and most powerful patterns.',
+      meaning: 'Big red â isolated Doji with gap â big green. One of the rarest and most powerful patterns.',
       psychology: 'Sellers completely abandoned. Nobody sold the Doji. New buyers overwhelm the next session.',
       conditions: 'Requires price gaps on both sides of the Doji (more visible on daily charts).',
       session: 'Rare on FX (no true gaps) but powerful on gap-open Sunday candles or daily charts.',
@@ -1030,11 +1004,11 @@ const candlePatterns = {
   ],
 };
 
-/* ──────────────────────────────────────────
+/* ââââââââââââââââââââââââââââââââââââââââââ
    RENDER CANDLE PATTERNS
-────────────────────────────────────────── */
+ââââââââââââââââââââââââââââââââââââââââââ */
 function makeCandleSVG(data) {
-  if (!data) return `<div class="w-full h-24 flex items-center justify-center text-4xl opacity-40">📊</div>`;
+  if (!data) return `<div class="w-full h-24 flex items-center justify-center text-4xl opacity-40">ð</div>`;
   const { color, height, topWick, bottomWick } = data;
   const totalH = height + topWick + bottomWick + 4;
   const bodyTop = topWick + 2;
@@ -1050,7 +1024,7 @@ function makeCandleSVG(data) {
     </svg>`;
 }
 
-/* Renders a multi-candle OHLC SVG — used for double/triple patterns */
+/* Renders a multi-candle OHLC SVG â used for double/triple patterns */
 function makePatternSVG(candles, h = 90) {
   const cCount = candles.length;
   const W = cCount * 32 + 10;
@@ -1077,11 +1051,11 @@ function makePatternSVG(candles, h = 90) {
   return `<svg viewBox="0 0 ${W} ${h}" style="height:${h}px;width:${W}px;">${paths}</svg>`;
 }
 
-/* Returns the right SVG for any pattern — single or multi-candle */
+/* Returns the right SVG for any pattern â single or multi-candle */
 function patternSVG(p, large = false) {
   if (p.candles) return makePatternSVG(p.candles, large ? 110 : 90);
   if (p.body)    return makeCandleSVG(p.body);
-  return `<div class="text-3xl opacity-30">📊</div>`;
+  return `<div class="text-3xl opacity-30">ð</div>`;
 }
 
 function signalBadge(signal, color) {
@@ -1121,19 +1095,19 @@ function showCategory(cat) {
       </div>
       <div class="space-y-3 text-sm">
         <div>
-          <span class="font-bold text-navy dark:text-slate-200">📖 What It Means: </span>
+          <span class="font-bold text-navy dark:text-slate-200">ð What It Means: </span>
           <span class="text-slate-600 dark:text-slate-400">${p.meaning}</span>
         </div>
         <div>
-          <span class="font-bold text-navy dark:text-slate-200">🧠 Psychology: </span>
+          <span class="font-bold text-navy dark:text-slate-200">ð§  Psychology: </span>
           <span class="text-slate-600 dark:text-slate-400">${p.psychology}</span>
         </div>
         <div>
-          <span class="font-bold text-navy dark:text-slate-200">📐 Best Conditions: </span>
+          <span class="font-bold text-navy dark:text-slate-200">ð Best Conditions: </span>
           <span class="text-slate-600 dark:text-slate-400">${p.conditions}</span>
         </div>
         <div class="bg-teal/5 dark:bg-teal/10 border border-teal/20 rounded-xl p-3">
-          <span class="font-bold text-teal text-xs uppercase tracking-wide">🕐 EU Session Example</span><br/>
+          <span class="font-bold text-teal text-xs uppercase tracking-wide">ð EU Session Example</span><br/>
           <span class="text-slate-600 dark:text-slate-400 text-sm">${p.session}</span>
         </div>
       </div>`;
@@ -1145,40 +1119,40 @@ function showCategory(cat) {
 // Init with single candles
 showCategory('single');
 
-/* ──────────────────────────────────────────
+/* ââââââââââââââââââââââââââââââââââââââââââ
    CHART EXAMPLES
-────────────────────────────────────────── */
+ââââââââââââââââââââââââââââââââââââââââââ */
 const chartScenarios = [
   {
-    title: 'EUR/USD — Hammer at Support',
-    pair: 'EUR/USD · H4',
-    setup: 'Price has been falling for 3 days. A textbook Hammer forms right at the 1.0850 support zone (which has held 4 times this year). The lower wick is 3× the body length.',
+    title: 'EUR/USD â Hammer at Support',
+    pair: 'EUR/USD Â· H4',
+    setup: 'Price has been falling for 3 days. A textbook Hammer forms right at the 1.0850 support zone (which has held 4 times this year). The lower wick is 3Ã the body length.',
     question: 'You see this Hammer on a 4H chart. What should you look for next?',
     outcome: 'The next candle opened bullish and closed with a 65-pip gain. Price rallied 180 pips over the next two sessions. The Hammer at support was a high-probability reversal entry. A stop below the Hammer low (15 pips) with a 45-pip target = 1:3 risk/reward.',
     result: 'WIN',
     lesson: 'Never trade a Hammer alone. Wait for the next candle to confirm bullish direction before entering.',
   },
   {
-    title: 'GBP/USD — Bearish Engulfing at Resistance',
-    pair: 'GBP/USD · H1',
-    setup: 'GBP/USD has rallied 200 pips in 2 days. It reaches a strong resistance at 1.2700 (a previous major high). A Bearish Engulfing candle forms — the red candle\'s body completely covers the prior green candle.',
+    title: 'GBP/USD â Bearish Engulfing at Resistance',
+    pair: 'GBP/USD Â· H1',
+    setup: 'GBP/USD has rallied 200 pips in 2 days. It reaches a strong resistance at 1.2700 (a previous major high). A Bearish Engulfing candle forms â the red candle\'s body completely covers the prior green candle.',
     question: 'Bearish Engulfing at resistance. Long, Short, or Wait?',
     outcome: 'Price reversed sharply, falling 140 pips over the next 6 hours. The confluence of resistance + Bearish Engulfing was a textbook SHORT signal. Risk: 18 pips above the pattern high. Reward: 54 pips = 1:3 RRR.',
     result: 'WIN',
-    lesson: 'Confluence is everything. A pattern at a key level is 3× more reliable than in the middle of nowhere.',
+    lesson: 'Confluence is everything. A pattern at a key level is 3Ã more reliable than in the middle of nowhere.',
   },
   {
-    title: 'USD/JPY — Doji in No-Man\'s Land',
-    pair: 'USD/JPY · H4',
-    setup: 'USD/JPY is in the middle of a range between 147.00 and 149.00. A Doji appears on the H4 chart — nowhere near support or resistance. Some traders get excited by the "indecision" signal.',
+    title: 'USD/JPY â Doji in No-Man\'s Land',
+    pair: 'USD/JPY Â· H4',
+    setup: 'USD/JPY is in the middle of a range between 147.00 and 149.00. A Doji appears on the H4 chart â nowhere near support or resistance. Some traders get excited by the "indecision" signal.',
     question: 'Doji mid-range. Is this a trade?',
-    outcome: 'Price chopped sideways for 18 hours then broke down 90 pips — but only because of a news event, not the Doji. Traders who entered Short based on the Doji alone got stopped out initially before the move.',
+    outcome: 'Price chopped sideways for 18 hours then broke down 90 pips â but only because of a news event, not the Doji. Traders who entered Short based on the Doji alone got stopped out initially before the move.',
     result: 'SKIP',
     lesson: 'A Doji mid-range is noise, not signal. Only trade indecision candles at meaningful levels. Context is everything.',
   },
   {
-    title: 'EUR/GBP — Morning Star Reversal',
-    pair: 'EUR/GBP · Daily',
+    title: 'EUR/GBP â Morning Star Reversal',
+    pair: 'EUR/GBP Â· Daily',
     setup: 'EUR/GBP has dropped for 5 consecutive days. On the daily chart: Day 1 large red candle, Day 2 small Doji near the bottom (indecision), Day 3 large green candle closing above the midpoint of Day 1\'s body.',
     question: 'Classic Morning Star. What is the professional entry strategy?',
     outcome: 'Price rallied 180 pips over the following week. The entry was at the open of Day 4 with a stop below the Doji low (22 pips risk). Target at the previous swing high = 66 pips = 1:3 RRR. Pattern worked perfectly.',
@@ -1186,17 +1160,17 @@ const chartScenarios = [
     lesson: 'Three-candle patterns on daily charts are significantly more reliable than single candles on H1. Higher timeframe = higher quality signal.',
   },
   {
-    title: 'AUD/USD — False Hammer (Trap)',
-    pair: 'AUD/USD · H1',
-    setup: 'AUD/USD is in a strong downtrend. A Hammer forms on H1 — but it appears WITHIN the downtrend, not at a clear support level. The overall trend is strongly bearish and there\'s no confluence.',
-    question: 'Hammer in a downtrend — do you take the reversal trade?',
-    outcome: 'Price temporarily bounced 18 pips (not enough to reach any profit target) then continued falling 95 pips lower. This was a "sucker\'s Hammer" — a counter-trend trap. Reversal traders were wiped out.',
+    title: 'AUD/USD â False Hammer (Trap)',
+    pair: 'AUD/USD Â· H1',
+    setup: 'AUD/USD is in a strong downtrend. A Hammer forms on H1 â but it appears WITHIN the downtrend, not at a clear support level. The overall trend is strongly bearish and there\'s no confluence.',
+    question: 'Hammer in a downtrend â do you take the reversal trade?',
+    outcome: 'Price temporarily bounced 18 pips (not enough to reach any profit target) then continued falling 95 pips lower. This was a "sucker\'s Hammer" â a counter-trend trap. Reversal traders were wiped out.',
     result: 'LOSS',
     lesson: 'Never fight the trend with a single candle reversal signal. Wait for multi-candle confirmation and always check the higher-timeframe trend direction first.',
   },
   {
-    title: 'EUR/USD — Three White Soldiers Breakout',
-    pair: 'EUR/USD · Daily',
+    title: 'EUR/USD â Three White Soldiers Breakout',
+    pair: 'EUR/USD Â· Daily',
     setup: 'EUR/USD breaks above a 3-week consolidation zone at 1.0900. Three consecutive large green daily candles appear, each opening in the prior candle\'s body and closing near its high. Volume increases each day.',
     question: 'Three White Soldiers after a breakout. How do you manage this trade?',
     outcome: 'Price continued rallying 320 pips over 12 trading days. Entering on the close of the third soldier with a stop below its low (35 pips) and targeting the next major resistance gave a 1:4+ RRR. This is a momentum trade, not a reversal.',
@@ -1225,7 +1199,7 @@ function renderChartExamples() {
       <!-- IMAGE: ${s.title} candle chart screenshot -->
       <div class="h-36 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center relative">
         <div class="text-slate-500 text-center">
-          <div class="text-5xl mb-2">📈</div>
+          <div class="text-5xl mb-2">ð</div>
           <div class="text-xs font-mono text-slate-400">${s.pair}</div>
         </div>
         <div class="absolute top-3 right-3">
@@ -1236,16 +1210,16 @@ function renderChartExamples() {
         <h3 class="font-black text-lg text-navy dark:text-white mb-3">${s.title}</h3>
         <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">${s.setup}</p>
         <div class="bg-teal/5 dark:bg-teal/10 border border-teal/20 rounded-xl p-3 mb-4">
-          <p class="text-teal-dark dark:text-teal text-sm font-semibold">❓ ${s.question}</p>
+          <p class="text-teal-dark dark:text-teal text-sm font-semibold">â ${s.question}</p>
         </div>
         <button onclick="revealOutcome(${i})" id="reveal-btn-${i}"
           class="reveal-btn w-full bg-navy dark:bg-slate-700 hover:bg-navy-lighter dark:hover:bg-slate-600 text-white font-bold py-3 rounded-xl text-sm transition">
-          👁️ Show What Happened
+          ðï¸ Show What Happened
         </button>
         <div id="outcome-${i}" class="hidden mt-4 rounded-xl p-4 border-2 ${resultColors[s.result]}">
           <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300 mb-3">${s.outcome}</p>
           <div class="border-t border-current/20 pt-3">
-            <span class="font-bold text-sm text-navy dark:text-white">💡 Key Lesson: </span>
+            <span class="font-bold text-sm text-navy dark:text-white">ð¡ Key Lesson: </span>
             <span class="text-sm text-slate-600 dark:text-slate-400">${s.lesson}</span>
           </div>
         </div>
@@ -1260,14 +1234,14 @@ function revealOutcome(i) {
   const btn     = document.getElementById(`reveal-btn-${i}`);
   if (outcome.classList.contains('hidden')) {
     outcome.classList.remove('hidden');
-    btn.textContent = '🔼 Hide Outcome';
+    btn.textContent = 'ð¼ Hide Outcome';
     btn.classList.add('bg-slate-400');
     btn.classList.remove('bg-navy','dark:bg-slate-700');
     // Advance stage
     if (currentStage < 2) { currentStage = 2; renderStages(); }
   } else {
     outcome.classList.add('hidden');
-    btn.textContent = '👁️ Show What Happened';
+    btn.textContent = 'ðï¸ Show What Happened';
     btn.classList.remove('bg-slate-400');
     btn.classList.add('bg-navy','dark:bg-slate-700');
   }
@@ -1275,17 +1249,17 @@ function revealOutcome(i) {
 
 renderChartExamples();
 
-/* ──────────────────────────────────────────
+/* ââââââââââââââââââââââââââââââââââââââââââ
    QUIZ DATA
-────────────────────────────────────────── */
+ââââââââââââââââââââââââââââââââââââââââââ */
 const allQuizzes = [
-  // QUIZ 1 — Candle Pattern Identification (8 questions)
+  // QUIZ 1 â Candle Pattern Identification (8 questions)
   {
     title: 'Quiz 1: Candle Pattern Identification',
-    description: 'Identify the candlestick patterns from the descriptions. Take your time — read each clue carefully.',
+    description: 'Identify the candlestick patterns from the descriptions. Take your time â read each clue carefully.',
     questions: [
       {
-        q: 'A candle forms with a small green body at the top and a very long lower wick (3× the body). It appears after a downtrend. What is this pattern?',
+        q: 'A candle forms with a small green body at the top and a very long lower wick (3Ã the body). It appears after a downtrend. What is this pattern?',
         options: ['Shooting Star', 'Hammer', 'Doji', 'Bearish Marubozu'],
         answer: 1,
         explanation: 'The Hammer has a small body near the top and a long lower wick, appearing in downtrends. It signals that sellers tried to push price lower but buyers overwhelmed them by the close.',
@@ -1303,7 +1277,7 @@ const allQuizzes = [
         explanation: 'Bullish Engulfing: the second (green) candle\'s body completely engulfs the first (red) candle. This signals that bulls have overwhelmed the prior selling pressure.',
       },
       {
-        q: 'On a daily chart: big red candle → small Doji → big green candle (closes above midpoint of Day 1). This 3-candle pattern is called:',
+        q: 'On a daily chart: big red candle â small Doji â big green candle (closes above midpoint of Day 1). This 3-candle pattern is called:',
         options: ['Evening Star', 'Three White Soldiers', 'Morning Star', 'Abandoned Baby'],
         answer: 2,
         explanation: 'Morning Star is a 3-candle bullish reversal pattern. Day 1: sellers dominate. Day 2: indecision (Doji). Day 3: buyers take control decisively. It signals a potential bottom.',
@@ -1324,19 +1298,19 @@ const allQuizzes = [
         q: 'Two consecutive candles form at the exact same HIGH price. The first is green, the second is red. What is this pattern?',
         options: ['Tweezer Bottom', 'Tweezer Top', 'Bearish Harami', 'Evening Star'],
         answer: 1,
-        explanation: 'Tweezer Top: two candles share the same high point, showing that price was rejected at that exact level twice. Sellers defended the zone both times — a bearish reversal signal.',
+        explanation: 'Tweezer Top: two candles share the same high point, showing that price was rejected at that exact level twice. Sellers defended the zone both times â a bearish reversal signal.',
       },
       {
         q: 'A candle with NO upper or lower wicks at all. The open is the low and the close is the high. What is this powerful single candle?',
         options: ['Doji', 'Spinning Top', 'Bullish Marubozu', 'Hammer'],
         answer: 2,
-        explanation: 'Bullish Marubozu: completely wick-free. Price opened at the low and closed at the high without any deviation. This shows complete buyer dominance — the most decisive bullish single candle.',
+        explanation: 'Bullish Marubozu: completely wick-free. Price opened at the low and closed at the high without any deviation. This shows complete buyer dominance â the most decisive bullish single candle.',
       },
       {
         q: 'In an uptrend, a large green candle is followed by a small red candle whose body fits entirely WITHIN the green candle\'s body range. What is this 2-candle pattern?',
         options: ['Bullish Engulfing', 'Bearish Harami', 'Tweezer Top', 'Evening Star'],
         answer: 1,
-        explanation: 'Bearish Harami: a small candle (child) fits inside the prior large candle (mother). In an uptrend, this signals that buying momentum is weakening. It requires confirmation — the smaller the second candle, the more significant the signal.',
+        explanation: 'Bearish Harami: a small candle (child) fits inside the prior large candle (mother). In an uptrend, this signals that buying momentum is weakening. It requires confirmation â the smaller the second candle, the more significant the signal.',
       },
       {
         q: 'Three consecutive large red candles appear, each opening within the prior body and closing near its low. This strong continuation pattern is called:',
@@ -1348,17 +1322,17 @@ const allQuizzes = [
         q: 'A candle looks like a Hammer (small body, long lower wick) but appears at the TOP of an uptrend instead of a downtrend. What is this bearish warning pattern?',
         options: ['Inverted Hammer', 'Shooting Star', 'Bearish Hanging Man', 'Doji'],
         answer: 2,
-        explanation: 'Bearish Hanging Man: identical shape to a Hammer but context is everything. At the top of an uptrend, this long lower wick shows that sellers pushed price down significantly during the session — a warning that bulls may be losing control.',
+        explanation: 'Bearish Hanging Man: identical shape to a Hammer but context is everything. At the top of an uptrend, this long lower wick shows that sellers pushed price down significantly during the session â a warning that bulls may be losing control.',
       },
       {
-        q: 'Which SINGLE candle pattern signals the STRONGEST bearish momentum — no wicks, opening at the high, closing at the low?',
+        q: 'Which SINGLE candle pattern signals the STRONGEST bearish momentum â no wicks, opening at the high, closing at the low?',
         options: ['Shooting Star', 'Bearish Harami', 'Bearish Marubozu', 'Evening Star'],
         answer: 2,
         explanation: 'Bearish Marubozu: wick-free bearish candle showing complete seller control from open to close. Bears dominated every single moment of the session with zero resistance from buyers. A very high-conviction downside signal.',
       },
     ],
   },
-  // QUIZ 2 — Decision Making (8 questions)
+  // QUIZ 2 â Decision Making (8 questions)
   {
     title: 'Quiz 2: Decision Making in Real Scenarios',
     description: 'Real market situations. What would a disciplined trader do?',
@@ -1371,21 +1345,21 @@ const allQuizzes = [
       },
       {
         q: 'You take a trade with a 20-pip stop loss and a 20-pip take profit (1:1 RRR). Your win rate is 55%. Over 100 trades, will you be profitable?',
-        options: ['Yes — you win more than you lose', 'No — 1:1 RRR requires much higher win rate', 'Marginally, but barely worth the stress', 'Depends entirely on the broker spread'],
+        options: ['Yes â you win more than you lose', 'No â 1:1 RRR requires much higher win rate', 'Marginally, but barely worth the stress', 'Depends entirely on the broker spread'],
         answer: 2,
-        explanation: 'At 1:1 RRR with 55% win rate: 55 winners × 20 pips = 1,100 pips. 45 losers × 20 pips = 900 pips. You\'re +200 pips but barely covering spreads and fees. A 1:2 or 1:3 RRR is far more sustainable.',
+        explanation: 'At 1:1 RRR with 55% win rate: 55 winners Ã 20 pips = 1,100 pips. 45 losers Ã 20 pips = 900 pips. You\'re +200 pips but barely covering spreads and fees. A 1:2 or 1:3 RRR is far more sustainable.',
       },
       {
         q: 'A Bearish Engulfing pattern appears but you\'re currently in a LONG trade. Price hasn\'t hit your stop loss yet. You should:',
-        options: ['Immediately close the trade at market', 'Move your stop loss to breakeven', 'Ignore it — stick to your original plan', 'Add more long positions (average down)'],
+        options: ['Immediately close the trade at market', 'Move your stop loss to breakeven', 'Ignore it â stick to your original plan', 'Add more long positions (average down)'],
         answer: 1,
-        explanation: 'Moving stop to breakeven protects your capital when new contradictory signals appear. You\'re not exiting emotionally — you\'re responding to new information. This is disciplined risk management.',
+        explanation: 'Moving stop to breakeven protects your capital when new contradictory signals appear. You\'re not exiting emotionally â you\'re responding to new information. This is disciplined risk management.',
       },
       {
         q: 'EUR/USD releases strong NFP data. Price spikes 80 pips in 30 seconds. A Shooting Star forms on the 5-minute chart. Should you trade it?',
-        options: ['Yes — perfect Shooting Star setup', 'Wait at least 15–30 minutes for volatility to settle', 'Only if you can get a tight 5-pip stop', 'Never trade on news days'],
+        options: ['Yes â perfect Shooting Star setup', 'Wait at least 15â30 minutes for volatility to settle', 'Only if you can get a tight 5-pip stop', 'Never trade on news days'],
         answer: 1,
-        explanation: 'During news-driven volatility, spreads widen dramatically and price can gap through stops. The safest approach is to wait 15–30 minutes for the initial reaction to settle before analyzing the new structure.',
+        explanation: 'During news-driven volatility, spreads widen dramatically and price can gap through stops. The safest approach is to wait 15â30 minutes for the initial reaction to settle before analyzing the new structure.',
       },
       {
         q: 'You\'ve had 4 losing trades in a row. Your trading plan says to take the next valid signal. What do you do?',
@@ -1395,7 +1369,7 @@ const allQuizzes = [
       },
       {
         q: 'You see a perfect Morning Star on the Daily EUR/USD chart but you also see the H4 trend is clearly bearish. What takes priority?',
-        options: ['The Morning Star — it\'s a strong signal', 'The H4 trend — always trade with the higher timeframe trend', 'Daily chart always overrides H4', 'Wait for H1 confirmation before deciding'],
+        options: ['The Morning Star â it\'s a strong signal', 'The H4 trend â always trade with the higher timeframe trend', 'Daily chart always overrides H4', 'Wait for H1 confirmation before deciding'],
         answer: 1,
         explanation: 'Trend alignment matters. A reversal signal against a strong trend on a lower timeframe is less reliable. The safest trades are those where the pattern aligns with the higher timeframe direction.',
       },
@@ -1403,25 +1377,25 @@ const allQuizzes = [
         q: 'Your broker offers EUR/USD with a 3-pip spread. You\'re using a 15-pip stop loss. What percentage of your risk is consumed by the spread alone?',
         options: ['5%', '10%', '20%', '25%'],
         answer: 2,
-        explanation: '3 pips spread ÷ 15 pips stop loss = 20%. This means you need a 20% larger move just to break even. This is why tight stops on major pairs with high spreads are dangerous — always factor in transaction costs.',
+        explanation: '3 pips spread Ã· 15 pips stop loss = 20%. This means you need a 20% larger move just to break even. This is why tight stops on major pairs with high spreads are dangerous â always factor in transaction costs.',
       },
       {
-        q: 'You want to risk 2% of your £5,000 account on a trade. Your stop loss is 25 pips. Trading EUR/USD (1 pip = £0.85 per micro lot). How many micro lots should you trade?',
+        q: 'You want to risk 2% of your Â£5,000 account on a trade. Your stop loss is 25 pips. Trading EUR/USD (1 pip = Â£0.85 per micro lot). How many micro lots should you trade?',
         options: ['1 micro lot', '3 micro lots', '5 micro lots', '10 micro lots'],
         answer: 2,
-        explanation: '2% of £5,000 = £100 max risk. £100 ÷ 25 pips ÷ £0.85 per pip ≈ 4.7 micro lots → round down to 4–5. This is position sizing — the most important skill a beginner must master.',
+        explanation: '2% of Â£5,000 = Â£100 max risk. Â£100 Ã· 25 pips Ã· Â£0.85 per pip â 4.7 micro lots â round down to 4â5. This is position sizing â the most important skill a beginner must master.',
       },
       {
-        q: 'EUR/USD spread is 1.5 pips. You trade 1 standard lot (€10/pip). What is the total cost of the spread in euros?',
-        options: ['€5', '€10', '€15', '€20'],
+        q: 'EUR/USD spread is 1.5 pips. You trade 1 standard lot (â¬10/pip). What is the total cost of the spread in euros?',
+        options: ['â¬5', 'â¬10', 'â¬15', 'â¬20'],
         answer: 2,
-        explanation: '1.5 pips × €10/pip = €15 spread cost. You start every standard lot trade €15 in the red. This is why tight stops on standard lots are very risky — a 5-pip stop means you need price to move 6.5 pips just to break even.',
+        explanation: '1.5 pips Ã â¬10/pip = â¬15 spread cost. You start every standard lot trade â¬15 in the red. This is why tight stops on standard lots are very risky â a 5-pip stop means you need price to move 6.5 pips just to break even.',
       },
       {
         q: 'You see a perfect Bullish Engulfing setup but a major news event (NFP, ECB rate decision) is due in 20 minutes. What should a disciplined trader do?',
-        options: ['Enter immediately — the pattern is too good to miss', 'Wait until after the news spike settles (15–30 min)', 'Double position size to profit from the volatility', 'Set a limit entry 50 pips below current price'],
+        options: ['Enter immediately â the pattern is too good to miss', 'Wait until after the news spike settles (15â30 min)', 'Double position size to profit from the volatility', 'Set a limit entry 50 pips below current price'],
         answer: 1,
-        explanation: 'News events cause spreads to widen massively (sometimes 10–20x) and price to gap through stops instantly. The safest approach is always to wait 15–30 minutes post-news for the initial chaos to settle and then re-evaluate the chart structure.',
+        explanation: 'News events cause spreads to widen massively (sometimes 10â20x) and price to gap through stops instantly. The safest approach is always to wait 15â30 minutes post-news for the initial chaos to settle and then re-evaluate the chart structure.',
       },
       {
         q: 'What does "confluence" mean in professional trading?',
@@ -1431,16 +1405,16 @@ const allQuizzes = [
       },
       {
         q: 'The London session typically runs from approximately:',
-        options: ['00:00–06:00 GMT', '08:00–17:00 GMT', '13:00–22:00 GMT', '18:00–02:00 GMT'],
+        options: ['00:00â06:00 GMT', '08:00â17:00 GMT', '13:00â22:00 GMT', '18:00â02:00 GMT'],
         answer: 1,
-        explanation: 'London session: roughly 08:00–17:00 GMT. The London open (08:00–10:00) is the highest-volatility period of the day, often reversing overnight Asian moves. This is when 30–40% of all daily FX volume trades.',
+        explanation: 'London session: roughly 08:00â17:00 GMT. The London open (08:00â10:00) is the highest-volatility period of the day, often reversing overnight Asian moves. This is when 30â40% of all daily FX volume trades.',
       },
     ],
   },
-  // QUIZ 3 — Risk & Psychology (6 questions)
+  // QUIZ 3 â Risk & Psychology (6 questions)
   {
     title: 'Quiz 3: Risk Management & Psychology',
-    description: 'The difference between winners and losers is almost never the strategy — it\'s risk management and psychology.',
+    description: 'The difference between winners and losers is almost never the strategy â it\'s risk management and psychology.',
     questions: [
       {
         q: 'What does ESMA\'s maximum leverage for EUR/USD (a major pair) allow for EU retail traders?',
@@ -1452,7 +1426,7 @@ const allQuizzes = [
         q: 'What is "Negative Balance Protection" and why is it critical for EU beginners?',
         options: ['It prevents you from losing more than you deposit', 'It guarantees profitable trades', 'It limits how many trades you can open', 'It only applies to crypto trading'],
         answer: 0,
-        explanation: 'NBP means you can never lose more than your account balance — the broker absorbs extreme losses beyond your funds. This is mandatory for EU retail clients under ESMA. ALWAYS verify your broker offers this.',
+        explanation: 'NBP means you can never lose more than your account balance â the broker absorbs extreme losses beyond your funds. This is mandatory for EU retail clients under ESMA. ALWAYS verify your broker offers this.',
       },
       {
         q: 'You win 4 big trades and feel "invincible." You decide to risk 10% of your account on the next trade instead of your usual 2%. This is called:',
@@ -1462,21 +1436,21 @@ const allQuizzes = [
       },
       {
         q: 'A trade moves against you by 35 pips. Your stop loss is at 40 pips. You move your stop loss to 60 pips to "give it more room." This is:',
-        options: ['Smart adaptation to market conditions', 'Moving the goalposts — a dangerous habit', 'Correct trailing stop technique', 'Only acceptable with strong fundamental support'],
+        options: ['Smart adaptation to market conditions', 'Moving the goalposts â a dangerous habit', 'Correct trailing stop technique', 'Only acceptable with strong fundamental support'],
         answer: 1,
-        explanation: 'Moving stops further away when a trade goes against you is one of the most destructive habits in trading. Your original stop was placed for a reason. Moving it is emotional, not analytical — and it destroys your RRR.',
+        explanation: 'Moving stops further away when a trade goes against you is one of the most destructive habits in trading. Your original stop was placed for a reason. Moving it is emotional, not analytical â and it destroys your RRR.',
       },
       {
         q: 'Statistics show that between __% of retail CFD/FX traders lose money. What is the EU-regulated disclosure range?',
-        options: ['30–40%', '50–60%', '70–80%', '90–95%'],
+        options: ['30â40%', '50â60%', '70â80%', '90â95%'],
         answer: 2,
-        explanation: 'EU regulations require brokers to disclose that 70–80% of retail CFD traders lose money. This is not a scare tactic — it\'s a fact. The minority who profit do so through strict risk management, not just strategy.',
+        explanation: 'EU regulations require brokers to disclose that 70â80% of retail CFD traders lose money. This is not a scare tactic â it\'s a fact. The minority who profit do so through strict risk management, not just strategy.',
       },
       {
         q: 'You are up 8% on your account this month. You want to achieve 20% monthly. You should:',
-        options: ['Increase position sizes to reach target', 'Take a break — you\'re likely overtrading', 'Set a daily profit target and keep trading aggressively', 'Lock in profits and stick to your normal plan'],
+        options: ['Increase position sizes to reach target', 'Take a break â you\'re likely overtrading', 'Set a daily profit target and keep trading aggressively', 'Lock in profits and stick to your normal plan'],
         answer: 3,
-        explanation: 'Chasing monthly targets leads to overtrading and revenge trading. 8% monthly return is extraordinary — professional fund managers average 15–25% ANNUALLY. Lock profits, stick to process, and compound slowly.',
+        explanation: 'Chasing monthly targets leads to overtrading and revenge trading. 8% monthly return is extraordinary â professional fund managers average 15â25% ANNUALLY. Lock profits, stick to process, and compound slowly.',
       },
       {
         q: 'What is "drawdown" and why does every trader need to understand it?',
@@ -1494,21 +1468,21 @@ const allQuizzes = [
         q: 'What does "scaling out" of a position mean?',
         options: ['Closing the entire position at once', 'Adding to a winning position to increase size', 'Partially closing the trade as it moves in your favour', 'Moving your stop loss to breakeven'],
         answer: 2,
-        explanation: 'Scaling out means closing portions of your position at different profit targets. Example: close 50% at 1:1 RRR, move stop to breakeven, let the other 50% run to 1:3. This locks in profit while keeping exposure to bigger moves — a professional technique.',
+        explanation: 'Scaling out means closing portions of your position at different profit targets. Example: close 50% at 1:1 RRR, move stop to breakeven, let the other 50% run to 1:3. This locks in profit while keeping exposure to bigger moves â a professional technique.',
       },
       {
         q: 'Which statement BEST describes the psychological difference between demo and live trading?',
         options: ['Demo results accurately predict live performance', 'Demo is only useful for complete beginners with zero knowledge', 'Demo removes the emotional stress that causes most beginners to break rules in live trading', 'Demo accounts always have tighter spreads than live accounts'],
         answer: 2,
-        explanation: 'This is the most important truth about demo trading. In demo, losing £1,000 virtual money feels nothing like losing real £1,000. Fear and greed are absent — which is why traders who are profitable on demo often struggle when going live. Use demo to build mechanical habits, then manage emotions separately.',
+        explanation: 'This is the most important truth about demo trading. In demo, losing Â£1,000 virtual money feels nothing like losing real Â£1,000. Fear and greed are absent â which is why traders who are profitable on demo often struggle when going live. Use demo to build mechanical habits, then manage emotions separately.',
       },
     ],
   },
 ];
 
-/* ──────────────────────────────────────────
+/* ââââââââââââââââââââââââââââââââââââââââââ
    QUIZ ENGINE
-────────────────────────────────────────── */
+ââââââââââââââââââââââââââââââââââââââââââ */
 let currentQuiz = 0;
 let quizState = {
   questionIndex: 0,
@@ -1606,7 +1580,7 @@ function selectAnswer(selected) {
     streak = 0;
   }
   document.getElementById('totalScore').textContent  = globalScore;
-  document.getElementById('streakCount').textContent = streak + (streak >= 3 ? ' 🔥' : '');
+  document.getElementById('streakCount').textContent = streak + (streak >= 3 ? ' ð¥' : '');
 
   // Explanation
   const exp = document.getElementById('quizExplanation');
@@ -1615,7 +1589,7 @@ function selectAnswer(selected) {
     : 'bg-red-50 dark:bg-red-900/20 border-red-300 dark:border-red-700'}`;
   exp.innerHTML = `
     <p class="font-bold text-lg mb-2 ${correct ? 'text-emerald-700 dark:text-emerald-400' : 'text-red-700 dark:text-red-400'}">
-      ${correct ? '✅ Correct!' : '❌ Not quite.'}
+      ${correct ? 'â Correct!' : 'â Not quite.'}
     </p>
     <p class="text-slate-700 dark:text-slate-300 leading-relaxed">${q.explanation}</p>`;
   exp.classList.remove('hidden');
@@ -1625,8 +1599,8 @@ function selectAnswer(selected) {
   wrap.style.display = 'flex';
   const isLast = quizState.questionIndex === quiz.questions.length - 1;
   wrap.innerHTML = isLast
-    ? `<button onclick="finishQuiz()" class="bg-teal hover:bg-teal-dark text-white font-bold px-8 py-3 rounded-xl transition">See Results →</button>`
-    : `<button onclick="nextQuestion()" class="bg-navy dark:bg-slate-600 hover:bg-navy-lighter text-white font-bold px-8 py-3 rounded-xl transition">Next Question →</button>`;
+    ? `<button onclick="finishQuiz()" class="bg-teal hover:bg-teal-dark text-white font-bold px-8 py-3 rounded-xl transition">See Results â</button>`
+    : `<button onclick="nextQuestion()" class="bg-navy dark:bg-slate-600 hover:bg-navy-lighter text-white font-bold px-8 py-3 rounded-xl transition">Next Question â</button>`;
 }
 
 function nextQuestion() {
@@ -1645,16 +1619,16 @@ function finishQuiz() {
   const pct   = Math.round((score / total) * 100);
 
   const tier =
-    pct === 100 ? { label: 'Perfect Score! 🏆', color: 'text-amber', bg: 'bg-amber/10 border-amber/30' } :
-    pct >= 75   ? { label: 'Excellent! 🎉',      color: 'text-teal',  bg: 'bg-teal/10 border-teal/30' }  :
-    pct >= 50   ? { label: 'Good Effort 👍',      color: 'text-blue-500', bg: 'bg-blue-50 dark:bg-blue-900/20 border-blue-300' } :
-                  { label: 'Keep Practicing 💪', color: 'text-slate-500', bg: 'bg-slate-50 dark:bg-slate-800 border-slate-200' };
+    pct === 100 ? { label: 'Perfect Score! ð', color: 'text-amber', bg: 'bg-amber/10 border-amber/30' } :
+    pct >= 75   ? { label: 'Excellent! ð',      color: 'text-teal',  bg: 'bg-teal/10 border-teal/30' }  :
+    pct >= 50   ? { label: 'Good Effort ð',      color: 'text-blue-500', bg: 'bg-blue-50 dark:bg-blue-900/20 border-blue-300' } :
+                  { label: 'Keep Practicing ðª', color: 'text-slate-500', bg: 'bg-slate-50 dark:bg-slate-800 border-slate-200' };
 
   if (pct === 100) launchConfetti();
 
   document.getElementById('quizContainer').innerHTML = `
     <div class="text-center py-8">
-      <div class="text-6xl mb-4">${pct === 100 ? '🏆' : pct >= 75 ? '🎉' : pct >= 50 ? '📊' : '📚'}</div>
+      <div class="text-6xl mb-4">${pct === 100 ? 'ð' : pct >= 75 ? 'ð' : pct >= 50 ? 'ð' : 'ð'}</div>
       <h3 class="text-3xl font-black text-navy dark:text-white mb-2">${tier.label}</h3>
       <p class="text-slate-500 dark:text-slate-400 mb-6">${quiz.title}</p>
 
@@ -1668,15 +1642,15 @@ function finishQuiz() {
       </div>
 
       <div class="flex flex-wrap gap-3 justify-center">
-        <button onclick="loadQuiz(${currentQuiz})" class="bg-navy dark:bg-slate-700 text-white font-bold px-6 py-3 rounded-xl hover:bg-navy-lighter transition">🔁 Retry Quiz</button>
-        ${currentQuiz < 2 ? `<button onclick="loadQuiz(${currentQuiz + 1})" class="bg-teal hover:bg-teal-dark text-white font-bold px-6 py-3 rounded-xl transition">Next Quiz →</button>` : `<button onclick="loadQuiz(0)" class="bg-amber hover:bg-amber-dark text-navy font-bold px-6 py-3 rounded-xl transition">🏠 Restart All Quizzes</button>`}
+        <button onclick="loadQuiz(${currentQuiz})" class="bg-navy dark:bg-slate-700 text-white font-bold px-6 py-3 rounded-xl hover:bg-navy-lighter transition">ð Retry Quiz</button>
+        ${currentQuiz < 2 ? `<button onclick="loadQuiz(${currentQuiz + 1})" class="bg-teal hover:bg-teal-dark text-white font-bold px-6 py-3 rounded-xl transition">Next Quiz â</button>` : `<button onclick="loadQuiz(0)" class="bg-amber hover:bg-amber-dark text-navy font-bold px-6 py-3 rounded-xl transition">ð  Restart All Quizzes</button>`}
       </div>
     </div>`;
 }
 
-/* ──────────────────────────────────────────
+/* ââââââââââââââââââââââââââââââââââââââââââ
    CONFETTI
-────────────────────────────────────────── */
+ââââââââââââââââââââââââââââââââââââââââââ */
 function launchConfetti() {
   const colors = ['#14B8A6','#F59E0B','#10b981','#6366f1','#f43f5e','#ffffff'];
   const container = document.getElementById('confettiContainer');
@@ -1700,9 +1674,9 @@ function launchConfetti() {
 // Init quiz
 loadQuiz(0);
 
-/* ──────────────────────────────────────────
+/* ââââââââââââââââââââââââââââââââââââââââââ
    MINI TRADING SIMULATOR
-────────────────────────────────────────── */
+ââââââââââââââââââââââââââââââââââââââââââ */
 const simSetups = [
   {
     label: 'Hammer at Support',
@@ -1739,7 +1713,7 @@ const simSetups = [
   {
     label: 'Morning Star Bottom',
     signal: 'Bullish Reversal (3-Candle)',
-    session: 'Daily Chart — Post-ECB',
+    session: 'Daily Chart â Post-ECB',
     bias: 'long',
     candles: [
       { o:1.1050, h:1.1060, l:1.1020, c:1.1035, bull:false },
@@ -1887,15 +1861,15 @@ function runSimulation() {
     resultEl.className = 'mt-6 rounded-2xl p-6 border-2 bg-emerald-50 dark:bg-emerald-900/20 border-emerald-300 dark:border-emerald-700';
     resultEl.innerHTML = `
       <div class="flex items-start gap-4">
-        <div class="text-4xl">✅</div>
+        <div class="text-4xl">â</div>
         <div>
           <h4 class="font-black text-xl text-emerald-700 dark:text-emerald-400 mb-2">Trade Won! +${tp} pips</h4>
           <p class="text-slate-700 dark:text-slate-300 text-sm mb-3">
             You went <strong>${simDirection.toUpperCase()}</strong> with a ${sl}-pip stop and ${tp}-pip target (RRR 1:${rrr}).
-            ${correct ? 'Your direction aligned with the pattern signal — excellent reading of price action!' : 'You traded against the signal but price was choppy and hit your target anyway. Lucky this time — but the odds were against you.'}
+            ${correct ? 'Your direction aligned with the pattern signal â excellent reading of price action!' : 'You traded against the signal but price was choppy and hit your target anyway. Lucky this time â but the odds were against you.'}
           </p>
           <div class="bg-emerald-100 dark:bg-emerald-900/40 rounded-xl p-3">
-            <p class="text-sm font-bold text-emerald-700 dark:text-emerald-400">💡 Key Takeaway:</p>
+            <p class="text-sm font-bold text-emerald-700 dark:text-emerald-400">ð¡ Key Takeaway:</p>
             <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">${correct
               ? `Great trade! Pattern + direction aligned = high-probability setup. A 1:${rrr} RRR means you only need to win ${Math.round(100/(1+parseFloat(rrr)))}% of trades to be profitable long-term.`
               : 'Even bad setups win sometimes. But trading against the signal means your win rate will be much lower over time. Focus on alignment between pattern, direction, and trend.'
@@ -1907,17 +1881,17 @@ function runSimulation() {
     resultEl.className = 'mt-6 rounded-2xl p-6 border-2 bg-red-50 dark:bg-red-900/20 border-red-300 dark:border-red-700';
     resultEl.innerHTML = `
       <div class="flex items-start gap-4">
-        <div class="text-4xl">❌</div>
+        <div class="text-4xl">â</div>
         <div>
           <h4 class="font-black text-xl text-red-700 dark:text-red-400 mb-2">Trade Lost. -${sl} pips</h4>
           <p class="text-slate-700 dark:text-slate-300 text-sm mb-3">
             You went <strong>${simDirection.toUpperCase()}</strong>. Price hit your stop loss of ${sl} pips.
-            ${!correct ? 'You traded against the pattern signal — that\'s the primary reason for this loss.' : 'Even correct signals fail sometimes. That\'s normal. The key is your RRR ensures one win covers multiple losses.'}
+            ${!correct ? 'You traded against the pattern signal â that\'s the primary reason for this loss.' : 'Even correct signals fail sometimes. That\'s normal. The key is your RRR ensures one win covers multiple losses.'}
           </p>
           <div class="bg-red-100 dark:bg-red-900/40 rounded-xl p-3">
-            <p class="text-sm font-bold text-red-700 dark:text-red-400">💡 Key Takeaway:</p>
+            <p class="text-sm font-bold text-red-700 dark:text-red-400">ð¡ Key Takeaway:</p>
             <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">${!correct
-              ? `Trading against the pattern signal significantly reduces your probability. The ${setup.signal} suggests ${setup.bias.toUpperCase()} — always trade with the signal, not against it.`
+              ? `Trading against the pattern signal significantly reduces your probability. The ${setup.signal} suggests ${setup.bias.toUpperCase()} â always trade with the signal, not against it.`
               : `No strategy wins every trade. With your 1:${rrr} RRR, you recover this loss with just one winning trade. Accept the loss, keep the discipline.`
             }</p>
           </div>
@@ -1930,15 +1904,15 @@ function runSimulation() {
 // Init simulator
 newSimTrade();
 
-/* ──────────────────────────────────────────
+/* ââââââââââââââââââââââââââââââââââââââââââ
    DAILY ROUTINE
-────────────────────────────────────────── */
+ââââââââââââââââââââââââââââââââââââââââââ */
 const routineSteps = [
   {
     time: '5 min',
     color: 'bg-teal/10 border-teal/30',
     accent: 'text-teal',
-    icon: '☕',
+    icon: 'â',
     title: 'Market Overview (Pre-Session Check)',
     steps: ['Check the economic calendar (ForexFactory.com or Investing.com)', 'Note any high-impact news events today (NFP, CPI, rate decisions)', 'Identify which session you\'re trading: Asian, London, or NY'],
   },
@@ -1946,7 +1920,7 @@ const routineSteps = [
     time: '10 min',
     color: 'bg-amber/10 border-amber/30',
     accent: 'text-amber-dark dark:text-amber',
-    icon: '📊',
+    icon: 'ð',
     title: 'Chart Analysis (Top-Down)',
     steps: ['Start on the Daily chart: identify the overall trend direction', 'Move to H4: find key support and resistance levels', 'Drop to H1: look for specific candle patterns at those levels', 'Mark your key levels with horizontal lines before anything else'],
   },
@@ -1954,7 +1928,7 @@ const routineSteps = [
     time: '5 min',
     color: 'bg-purple-100 dark:bg-purple-900/20 border-purple-300 dark:border-purple-700',
     accent: 'text-purple-600 dark:text-purple-400',
-    icon: '🎯',
+    icon: 'ð¯',
     title: 'Trade Setup Identification',
     steps: ['Is there a valid candle pattern at a key level?', 'Does the signal align with the higher-timeframe trend?', 'What is the risk/reward ratio? (minimum 1:2 required)', 'Where exactly is your stop loss and take profit?'],
   },
@@ -1962,15 +1936,15 @@ const routineSteps = [
     time: '5 min',
     color: 'bg-blue-100 dark:bg-blue-900/20 border-blue-300 dark:border-blue-700',
     accent: 'text-blue-600 dark:text-blue-400',
-    icon: '🧮',
+    icon: 'ð§®',
     title: 'Position Sizing & Risk Check',
-    steps: ['Calculate your risk in £/€/$ (never more than 1–2% of your account)', 'Calculate exact lot size based on stop loss distance', 'Confirm your broker\'s margin requirements', 'Set trade alerts if you can\'t watch the market live'],
+    steps: ['Calculate your risk in Â£/â¬/$ (never more than 1â2% of your account)', 'Calculate exact lot size based on stop loss distance', 'Confirm your broker\'s margin requirements', 'Set trade alerts if you can\'t watch the market live'],
   },
   {
     time: '5 min',
     color: 'bg-emerald-100 dark:bg-emerald-900/20 border-emerald-300 dark:border-emerald-700',
     accent: 'text-emerald-700 dark:text-emerald-400',
-    icon: '📔',
+    icon: 'ð',
     title: 'Trade Journal Entry',
     steps: ['Write down your setup BEFORE placing the trade', 'Record: pair, direction, entry, stop loss, take profit, pattern, reason', 'After the trade: record actual outcome and lessons learned', 'Review your last 5 trades for patterns in your mistakes'],
   },
@@ -1990,7 +1964,7 @@ function renderRoutine() {
       <div class="flex-1">
         <h4 class="font-black text-lg text-navy dark:text-white mb-2">${step.title}</h4>
         <ul class="space-y-1">
-          ${step.steps.map(s => `<li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="${step.accent} mt-0.5 flex-shrink-0">▸</span><span>${s}</span></li>`).join('')}
+          ${step.steps.map(s => `<li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="${step.accent} mt-0.5 flex-shrink-0">â¸</span><span>${s}</span></li>`).join('')}
         </ul>
       </div>`;
     container.appendChild(div);
@@ -2000,37 +1974,36 @@ function renderRoutine() {
 
 renderRoutine();
 
-/* ──────────────────────────────────────────
+/* ââââââââââââââââââââââââââââââââââââââââââ
    NEXT STEPS CARDS
-────────────────────────────────────────── */
+ââââââââââââââââââââââââââââââââââââââââââ */
 const nextStepsData = [
-  /* HIDDEN — restore when broker affiliate links are live
+  /* HIDDEN â restore when broker affiliate links are live
   {
-    icon: '🏦',
+    icon: 'ð¦',
     title: 'Open a Demo Account',
     subtitle: 'Zero risk. Real markets.',
     desc: 'Practice everything you\'ve learned with virtual money on a real trading platform. All EU-regulated brokers offer free demo accounts with no time limit.',
-    brokers: ['eToro — CySEC, beginner-friendly', 'Pepperstone — Fast execution, MT5', 'XTB — Award-winning xStation 5', 'IG Markets — Most regulated broker EU'],
-    cta: 'Find a Demo Account →',
+    cta: 'Find a Demo Account â',
     ctaColor: 'bg-teal hover:bg-teal-dark text-white',
   },
   */
   {
-    icon: '📔',
+    icon: 'ð',
     title: 'Keep a Trade Journal',
     subtitle: 'Track every trade. Learn faster.',
     desc: 'Professional traders don\'t rely on memory. A trade journal is the most powerful improvement tool you have. Document setups, outcomes, and emotions.',
-    bullets: ['Record: date, pair, pattern, entry, SL, TP', 'Track your win rate and average RRR', 'Identify which patterns work best for YOU', 'Review weekly — patterns in your mistakes'],
+    bullets: ['Record: date, pair, pattern, entry, SL, TP', 'Track your win rate and average RRR', 'Identify which patterns work best for YOU', 'Review weekly â patterns in your mistakes'],
     noButton: true,
   },
-  /* HIDDEN — restore when community is ready
+  /* HIDDEN â restore when community is ready
   {
-    icon: '👥',
+    icon: 'ð¥',
     title: 'Join the Practice Community',
     subtitle: 'Learn with other beginners.',
     desc: 'Connect with thousands of EU traders following the same educational path. Share setups, ask questions, and stay motivated with a supportive community.',
-    bullets: ['Daily trading discussions (EU sessions)', 'Weekly setup reviews from senior traders', 'Safe environment — no signals, no hype', 'Moderated by certified educators'],
-    cta: 'Join Community (Free) →',
+    bullets: ['Daily trading discussions (EU sessions)', 'Weekly setup reviews from senior traders', 'Safe environment â no signals, no hype', 'Moderated by certified educators'],
+    cta: 'Join Community (Free) â',
     ctaColor: 'bg-purple-600 hover:bg-purple-700 text-white',
     placeholder: true,
   },
@@ -2045,8 +2018,8 @@ function renderNextSteps() {
     card.style.transitionDelay = `${i * 100}ms`;
 
     const listHTML = item.brokers
-      ? item.brokers.map(b => `<li class="text-sm text-slate-300 flex items-center gap-2"><span class="text-teal">✓</span>${b}</li>`).join('')
-      : item.bullets.map(b => `<li class="text-sm text-slate-300 flex items-start gap-2"><span class="text-teal mt-0.5">▸</span>${b}</li>`).join('');
+      ? item.brokers.map(b => `<li class="text-sm text-slate-300 flex items-center gap-2"><span class="text-teal">â</span>${b}</li>`).join('')
+      : item.bullets.map(b => `<li class="text-sm text-slate-300 flex items-start gap-2"><span class="text-teal mt-0.5">â¸</span>${b}</li>`).join('');
 
     card.innerHTML = `
       <div class="text-4xl mb-4">${item.icon}</div>
@@ -2066,23 +2039,23 @@ function renderNextSteps() {
 
 renderNextSteps();
 
-/* ──────────────────────────────────────────
+/* ââââââââââââââââââââââââââââââââââââââââââ
    INTERSECTION OBSERVER (fade-in on scroll)
-────────────────────────────────────────── */
+ââââââââââââââââââââââââââââââââââââââââââ */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-/* ──────────────────────────────────────────
+/* ââââââââââââââââââââââââââââââââââââââââââ
    CANVAS RESIZE
-────────────────────────────────────────── */
+ââââââââââââââââââââââââââââââââââââââââââ */
 window.addEventListener('resize', () => drawSimChart());
 
-/* ──────────────────────────────────────────
+/* ââââââââââââââââââââââââââââââââââââââââââ
    FLASH CARDS
-────────────────────────────────────────── */
+ââââââââââââââââââââââââââââââââââââââââââ */
 const catLabel = { single:'Single Candle', double:'Double Pattern', triple:'Triple Pattern' };
 const flashDeck = [];
 ['single','double','triple'].forEach(cat => {
@@ -2123,23 +2096,23 @@ function renderFlashCard() {
 
   // Signal hint only (no name)
   const hintMap = {
-    green:  { cls: 'bg-emerald-50 dark:bg-emerald-900/30 border-emerald-300 dark:border-emerald-700 text-emerald-600 dark:text-emerald-400', label: '● Bullish Signal'    },
-    red:    { cls: 'bg-red-50 dark:bg-red-900/30 border-red-300 dark:border-red-700 text-red-600 dark:text-red-400',                         label: '● Bearish Signal'    },
-    yellow: { cls: 'bg-amber-50 dark:bg-amber-900/30 border-amber-300 dark:border-amber-700 text-amber-600 dark:text-amber-400',              label: '● Indecision Signal' },
+    green:  { cls: 'bg-emerald-50 dark:bg-emerald-900/30 border-emerald-300 dark:border-emerald-700 text-emerald-600 dark:text-emerald-400', label: 'â Bullish Signal'    },
+    red:    { cls: 'bg-red-50 dark:bg-red-900/30 border-red-300 dark:border-red-700 text-red-600 dark:text-red-400',                         label: 'â Bearish Signal'    },
+    yellow: { cls: 'bg-amber-50 dark:bg-amber-900/30 border-amber-300 dark:border-amber-700 text-amber-600 dark:text-amber-400',              label: 'â Indecision Signal' },
   };
   const hint = hintMap[p.signalColor] || hintMap.yellow;
   const hintEl = document.getElementById('fcSignalHint');
   hintEl.className = `text-xs font-bold px-4 py-1.5 rounded-full border ${hint.cls}`;
   hintEl.textContent = hint.label;
 
-  // Candle chart — large, no emoji
+  // Candle chart â large, no emoji
   const svgEl = document.getElementById('fcFrontSVG');
   if (p.candles) {
     svgEl.innerHTML = makePatternSVGLarge(p.candles);
   } else if (p.body) {
     svgEl.innerHTML = makeCandleSVGLarge(p.body);
   } else {
-    svgEl.innerHTML = `<div class="text-5xl opacity-20">📊</div>`;
+    svgEl.innerHTML = `<div class="text-5xl opacity-20">ð</div>`;
   }
 
   // --- BACK ---
@@ -2200,9 +2173,9 @@ function updateFcCounters() {
 
 renderFlashCard();
 
-/* ──────────────────────────────────────────
+/* ââââââââââââââââââââââââââââââââââââââââââ
    PATTERN RECOGNITION GAME
-────────────────────────────────────────── */
+ââââââââââââââââââââââââââââââââââââââââââ */
 const pgAllPatterns = flashDeck; // reuse
 let pgQuestions = [];
 let pgCurrentQ  = 0;
@@ -2222,7 +2195,7 @@ function pgBuildQuestions() {
   pgCurrentQ = pgScore = pgStreak = 0;
   document.getElementById('pgScore').textContent  = 0;
   document.getElementById('pgQ').textContent      = `0/${PG_TOTAL}`;
-  document.getElementById('pgStreak').textContent = '0🔥';
+  document.getElementById('pgStreak').textContent = '0ð¥';
   renderPGQuestion();
 }
 
@@ -2232,11 +2205,11 @@ function renderPGQuestion() {
     const pct = Math.round((pgScore / PG_TOTAL) * 100);
     container.innerHTML = `
       <div class="text-center py-6">
-        <div class="text-6xl mb-4">${pct >= 80 ? '🏆' : pct >= 60 ? '🎯' : '📚'}</div>
+        <div class="text-6xl mb-4">${pct >= 80 ? 'ð' : pct >= 60 ? 'ð¯' : 'ð'}</div>
         <h3 class="text-2xl font-black text-navy dark:text-white mb-2">${pct >= 80 ? 'Excellent Pattern Recognition!' : pct >= 60 ? 'Good Progress!' : 'Keep Practicing!'}</h3>
         <div class="text-5xl font-black text-teal my-4">${pgScore}/${PG_TOTAL}</div>
         <p class="text-slate-500 mb-6">${pct}% correct</p>
-        <button onclick="pgBuildQuestions()" class="bg-teal hover:bg-teal-dark text-white font-bold px-8 py-4 rounded-2xl transition">🔁 Play Again</button>
+        <button onclick="pgBuildQuestions()" class="bg-teal hover:bg-teal-dark text-white font-bold px-8 py-4 rounded-2xl transition">ð Play Again</button>
       </div>`;
     if (pct === 100) launchConfetti();
     return;
@@ -2245,7 +2218,7 @@ function renderPGQuestion() {
   const p = q.correct;
   container.innerHTML = `
     <div class="text-center mb-6">
-      <p class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">Question ${pgCurrentQ + 1} of ${PG_TOTAL} — What is this pattern?</p>
+      <p class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">Question ${pgCurrentQ + 1} of ${PG_TOTAL} â What is this pattern?</p>
       <div class="flex justify-center items-center gap-6 bg-slate-100 dark:bg-navy rounded-2xl p-6 mb-2">
         ${patternSVG(p, true)}
         <div class="text-left">
@@ -2276,252 +2249,26 @@ function pgAnswer(selected) {
   if (correct) { pgScore++; pgStreak++; } else { pgStreak = 0; }
   document.getElementById('pgScore').textContent  = pgScore;
   document.getElementById('pgQ').textContent      = `${pgCurrentQ + 1}/${PG_TOTAL}`;
-  document.getElementById('pgStreak').textContent = pgStreak + (pgStreak >= 3 ? '🔥' : '');
+  document.getElementById('pgStreak').textContent = pgStreak + (pgStreak >= 3 ? 'ð¥' : '');
 
   const fb = document.getElementById('pgFeedback');
   fb.className = `mt-4 rounded-xl p-4 border-2 ${correct ? 'bg-emerald-50 dark:bg-emerald-900/20 border-emerald-300 dark:border-emerald-700' : 'bg-red-50 dark:bg-red-900/20 border-red-300 dark:border-red-700'}`;
   fb.innerHTML = `
-    <p class="font-bold mb-1 ${correct ? 'text-emerald-700 dark:text-emerald-400' : 'text-red-700 dark:text-red-400'}">${correct ? '✅ Correct! ' : '❌ Not quite — it\'s the '}<strong>${q.correct.name}</strong></p>
+    <p class="font-bold mb-1 ${correct ? 'text-emerald-700 dark:text-emerald-400' : 'text-red-700 dark:text-red-400'}">${correct ? 'â Correct! ' : 'â Not quite â it\'s the '}<strong>${q.correct.name}</strong></p>
     <p class="text-sm text-slate-600 dark:text-slate-400">${q.correct.meaning}</p>
-    <button onclick="pgNextQ()" class="mt-3 bg-navy dark:bg-slate-600 text-white font-bold px-6 py-2 rounded-xl text-sm transition hover:bg-navy-lighter">${pgCurrentQ + 1 >= PG_TOTAL ? 'See Results →' : 'Next →'}</button>`;
+    <button onclick="pgNextQ()" class="mt-3 bg-navy dark:bg-slate-600 text-white font-bold px-6 py-2 rounded-xl text-sm transition hover:bg-navy-lighter">${pgCurrentQ + 1 >= PG_TOTAL ? 'See Results â' : 'Next â'}</button>`;
   fb.classList.remove('hidden');
 }
 
 function pgNextQ() { pgCurrentQ++; renderPGQuestion(); }
 pgBuildQuestions();
 
-/* ──────────────────────────────────────────
+/* ââââââââââââââââââââââââââââââââââââââââââ
    BROKER DIRECTORY
-────────────────────────────────────────── */
-// ⚠️  REPLACE "YOURCODE" with your actual affiliate tracking codes for each broker.
-const brokers = [
-  {
-    name: 'eToro',
-    logo: '🟢',
-    tagline: 'Best for Social & Copy Trading',
-    badge: '⭐ Most Popular EU',
-    badgeClass: 'bg-amber text-navy',
-    regulation: ['CySEC', 'FCA', 'ASIC'],
-    minDeposit: '€50',
-    spread: 'From 1.0 pip (EUR/USD)',
-    leverage: 'Up to 1:30 (EU Retail)',
-    features: ['Copy expert traders', 'Social trading feed', '3,000+ markets', 'Free demo'],
-    highlight: 'Perfect for beginners. Copy profitable traders with one click. No FX experience needed.',
-    link: 'https://www.etoro.com/lp/trading/?utm_source=fidus&utm_medium=affiliate&utm_campaign=YOURCODE',
-    cta: 'Open Free Demo →',
-    cardClass: 'border-t-4 border-green-400',
-    ctaClass: 'bg-green-500 hover:bg-green-600 text-white',
-  },
-  {
-    name: 'Pepperstone',
-    logo: '🔵',
-    tagline: 'Best for Low Spreads & Speed',
-    badge: '🏆 Pro Choice',
-    badgeClass: 'bg-teal text-white',
-    regulation: ['FCA', 'CySEC', 'ASIC', 'BaFin'],
-    minDeposit: '€200',
-    spread: 'From 0.0 pips (Razor)',
-    leverage: 'Up to 1:30 (EU Retail)',
-    features: ['MT4, MT5, cTrader', 'Raw ECN spreads', 'Fast execution', 'EU regulated'],
-    highlight: 'Razor-thin spreads with no dealing desk. Ideal once you move past the beginner stage.',
-    link: 'https://pepperstone.com/?a=YOURCODE',
-    cta: 'Start Free Demo →',
-    cardClass: 'border-t-4 border-teal-400',
-    ctaClass: 'bg-teal hover:bg-teal-dark text-white',
-  },
-  {
-    name: 'XTB',
-    logo: '🟣',
-    tagline: 'Best Platform for EU Beginners',
-    badge: '🇪🇺 EU Favourite',
-    badgeClass: 'bg-blue-600 text-white',
-    regulation: ['KNF', 'FCA', 'CySEC'],
-    minDeposit: '€0 (no min)',
-    spread: 'From 0.8 pip (EUR/USD)',
-    leverage: 'Up to 1:30 (EU Retail)',
-    features: ['Award-winning xStation 5', 'Free education', 'No deposit minimum', 'EU tax reports'],
-    highlight: 'No minimum deposit. Award-winning xStation platform — designed with EU beginners in mind.',
-    link: 'https://www.xtb.com/en?a=YOURCODE',
-    cta: 'Open XTB Demo →',
-    cardClass: 'border-t-4 border-blue-500',
-    ctaClass: 'bg-blue-600 hover:bg-blue-700 text-white',
-  },
-  {
-    name: 'IG Markets',
-    logo: '⚫',
-    tagline: 'Most Trusted & Established',
-    badge: '🏛️ Est. 1974',
-    badgeClass: 'bg-slate-700 text-white',
-    regulation: ['FCA', 'BaFin', 'FSMA'],
-    minDeposit: '€250',
-    spread: 'From 0.6 pip (EUR/USD)',
-    leverage: 'Up to 1:30 (EU Retail)',
-    features: ['50 years in business', 'Weekend indices', 'Advanced charts', 'DMA pricing'],
-    highlight: 'The oldest and most trusted broker. Ideal for traders who prioritise reliability and depth.',
-    link: 'https://www.ig.com/uk/forex?a=YOURCODE',
-    cta: 'Try IG Demo →',
-    cardClass: 'border-t-4 border-slate-500',
-    ctaClass: 'bg-slate-700 hover:bg-slate-600 text-white',
-  },
-  {
-    name: 'Plus500',
-    logo: '🔴',
-    tagline: 'Simplest UI for Absolute Beginners',
-    badge: '📱 Mobile First',
-    badgeClass: 'bg-red-500 text-white',
-    regulation: ['CySEC', 'FCA', 'ASIC'],
-    minDeposit: '€100',
-    spread: 'Variable (all-in)',
-    leverage: 'Up to 1:30 (EU Retail)',
-    features: ['Dead-simple interface', 'Risk management tools', 'Free unlimited demo', '2,800+ instruments'],
-    highlight: 'The cleanest, most beginner-friendly interface available. Great for learning execution.',
-    link: 'https://www.plus500.com/?a=YOURCODE',
-    cta: 'Try Plus500 Free →',
-    cardClass: 'border-t-4 border-red-400',
-    ctaClass: 'bg-red-500 hover:bg-red-600 text-white',
-  },
-  {
-    name: 'OANDA',
-    logo: '🟠',
-    tagline: 'Best for Micro Trading & Low Volume',
-    badge: '🔬 Micro Lots',
-    badgeClass: 'bg-orange-500 text-white',
-    regulation: ['FCA', 'MAS', 'ASIC'],
-    minDeposit: '€0 (no min)',
-    spread: 'From 0.6 pip (EUR/USD)',
-    leverage: 'Up to 1:30 (EU Retail)',
-    features: ['Trade from 1 unit (not lots)', 'No minimum deposit', 'MT4 + fxTrade platform', 'Advanced analytics'],
-    highlight: 'Trade any size — even 1 unit. Perfect for precise position sizing as a beginner.',
-    link: 'https://www.oanda.com/eu-en/trading/?a=YOURCODE',
-    cta: 'Open OANDA Demo →',
-    cardClass: 'border-t-4 border-orange-400',
-    ctaClass: 'bg-orange-500 hover:bg-orange-600 text-white',
-  },
-  {
-    name: 'IC Markets',
-    logo: '💎',
-    tagline: 'Best Raw Spreads for Active Traders',
-    badge: '⚡ Lowest Spreads',
-    badgeClass: 'bg-indigo-600 text-white',
-    regulation: ['ASIC', 'CySEC', 'SCB'],
-    minDeposit: '€200',
-    spread: 'From 0.0 pips (Raw)',
-    leverage: 'Up to 1:30 (EU via CySEC)',
-    features: ['Raw institutional spreads', 'MT4, MT5, cTrader', 'Fast ECN execution', 'Scalping allowed'],
-    highlight: 'Industry-leading raw spreads. Best choice for scalpers and high-frequency traders.',
-    link: 'https://www.icmarkets.com/?a=YOURCODE',
-    cta: 'Open IC Demo →',
-    cardClass: 'border-t-4 border-indigo-500',
-    ctaClass: 'bg-indigo-600 hover:bg-indigo-700 text-white',
-  },
-  {
-    name: 'AvaTrade',
-    logo: '🌐',
-    tagline: 'Best for Beginners — EU Regulated',
-    badge: '🇮🇪 CBI Regulated',
-    badgeClass: 'bg-emerald-700 text-white',
-    regulation: ['CBI', 'ASIC', 'FSCA', 'ADGM'],
-    minDeposit: '€100',
-    spread: 'From 0.9 pip (EUR/USD)',
-    leverage: 'Up to 1:30 (EU Retail)',
-    features: ['AvaProtect risk tool', 'Automated trading', 'DupliTrade copy', 'Strong education'],
-    highlight: 'AvaProtect lets you insure trades for a fee — unique risk management for nervous beginners.',
-    link: 'https://www.avatrade.com/?tag=YOURCODE',
-    cta: 'Start with AvaTrade →',
-    cardClass: 'border-t-4 border-emerald-500',
-    ctaClass: 'bg-emerald-700 hover:bg-emerald-600 text-white',
-  },
-  {
-    name: 'CMC Markets',
-    logo: '🇬🇧',
-    tagline: 'Best Charting & Analysis Tools',
-    badge: '📊 Best Charts',
-    badgeClass: 'bg-cyan-600 text-white',
-    regulation: ['FCA', 'BaFin', 'ASIC'],
-    minDeposit: '€0 (no min)',
-    spread: 'From 0.7 pip (EUR/USD)',
-    leverage: 'Up to 1:30 (EU Retail)',
-    features: ['Next Generation platform', 'Advanced pattern recognition', '330+ FX pairs', 'No minimum deposit'],
-    highlight: 'The "Next Generation" platform has the best built-in charting tools of any retail broker.',
-    link: 'https://www.cmcmarkets.com/?ref=YOURCODE',
-    cta: 'Open CMC Demo →',
-    cardClass: 'border-t-4 border-cyan-500',
-    ctaClass: 'bg-cyan-600 hover:bg-cyan-700 text-white',
-  },
-  {
-    name: 'Saxo Bank',
-    logo: '🏦',
-    tagline: 'Best for Serious / Premium Traders',
-    badge: '💼 Premium',
-    badgeClass: 'bg-amber-700 text-white',
-    regulation: ['Danish FSA', 'FCA', 'MAS'],
-    minDeposit: '€2,000',
-    spread: 'From 0.4 pip (EUR/USD)',
-    leverage: 'Up to 1:30 (EU Retail)',
-    features: ['Institutional-grade platform', '185 FX pairs', 'Stock + bonds + FX', 'SaxoTraderGO'],
-    highlight: 'Bank-grade security and the tightest institutional spreads. For traders ready to go professional.',
-    link: 'https://www.home.saxo/?a=YOURCODE',
-    cta: 'Try Saxo Demo →',
-    cardClass: 'border-t-4 border-amber-600',
-    ctaClass: 'bg-amber-700 hover:bg-amber-600 text-white',
-  },
-];
+ââââââââââââââââââââââââââââââââââââââââââ */
+// â ï¸  REPLACE "YOURCODE" with your actual affiliate tracking codes for each broker.
 
-function renderBrokers() {
-  const grid = document.getElementById('brokerGrid');
-  brokers.forEach((b, i) => {
-    const card = document.createElement('div');
-    card.className = `bg-white/10 backdrop-blur rounded-2xl p-6 ${b.cardClass} hover-lift fade-in border border-white/10`;
-    card.style.transitionDelay = `${i * 60}ms`;
-    card.innerHTML = `
-      <div class="flex items-start justify-between mb-3">
-        <div class="flex items-center gap-3">
-          <div class="text-3xl">${b.logo}</div>
-          <div>
-            <h3 class="font-black text-xl text-white">${b.name}</h3>
-            <p class="text-slate-400 text-xs">${b.tagline}</p>
-          </div>
-        </div>
-        <span class="text-xs font-bold px-2 py-1 rounded-full ${b.badgeClass} whitespace-nowrap ml-2">${b.badge}</span>
-      </div>
-      <!-- Regulation badges -->
-      <div class="flex flex-wrap gap-1 mb-4">
-        ${b.regulation.map(r => `<span class="text-xs px-2 py-0.5 rounded bg-white/10 text-slate-300 font-semibold">${r}</span>`).join('')}
-      </div>
-      <!-- Key stats -->
-      <div class="grid grid-cols-2 gap-2 mb-4 text-sm">
-        <div class="bg-white/5 rounded-lg p-2">
-          <div class="text-slate-400 text-xs">Min Deposit</div>
-          <div class="font-bold text-white">${b.minDeposit}</div>
-        </div>
-        <div class="bg-white/5 rounded-lg p-2">
-          <div class="text-slate-400 text-xs">EUR/USD Spread</div>
-          <div class="font-bold text-teal-light">${b.spread}</div>
-        </div>
-        <div class="bg-white/5 rounded-lg p-2 col-span-2">
-          <div class="text-slate-400 text-xs">Max Leverage</div>
-          <div class="font-bold text-amber">${b.leverage}</div>
-        </div>
-      </div>
-      <!-- Features -->
-      <ul class="space-y-1 mb-4">
-        ${b.features.map(f => `<li class="text-xs text-slate-300 flex items-center gap-2"><span class="text-teal">✓</span>${f}</li>`).join('')}
-      </ul>
-      <!-- Highlight -->
-      <div class="bg-white/5 rounded-xl p-3 mb-4 border border-white/10">
-        <p class="text-xs text-slate-300 leading-relaxed"><span class="text-teal-light font-bold">Why choose: </span>${b.highlight}</p>
-      </div>
-      <!-- CTA -->
-      <a href="${b.link}" target="_blank" rel="noopener noreferrer sponsored"
-        class="block text-center font-bold py-3 rounded-xl text-sm transition ${b.ctaClass} hover:-translate-y-0.5 hover:shadow-lg">
-        ${b.cta}
-      </a>`;
-    grid.appendChild(card);
-    setTimeout(() => card.classList.add('visible'), 100 + i * 60);
-  });
-}
 
-renderBrokers();
 </script>
 </body>
 </html>
